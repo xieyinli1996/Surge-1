@@ -59,7 +59,7 @@ https://raw.githubusercontent.com/mist-whisper/Surge/master/Surge.conf
 * [Surge Pro](https://raw.githubusercontent.com/mist-whisper/Surge/master/Modules/Panel_SurgePro.sgmodule)
 * [节假日信息](https://raw.githubusercontent.com/mist-whisper/Surge/master/Modules/Panel_Timecard.sgmodule)
 * [QQ链接解锁](https://raw.githubusercontent.com/mist-whisper/Surge/master/Modules/QQ_Redirect.sgmodule)
-* 小红书去广告surge:///install-module?url=https://raw.githubusercontent.com/mist-whisper/Surge/refs/heads/master/Modules/REDnote_remove_ads.sgmodule
+* [小红书去广告](<surge:///install-module?url=https://raw.githubusercontent.com/mist-whisper/Surge/refs/heads/master/Modules/REDnote_remove_ads.sgmodule>)
 * [可莉广告过滤器](https://raw.githubusercontent.com/mist-whisper/Surge/master/Modules/Remove_ads_by_keli.sgmodule)
 * [SafeRedirect](https://raw.githubusercontent.com/mist-whisper/Surge/master/Modules/SafeRedirect.sgmodule)
 * [Skip Proxy And Real-IP Lists](https://raw.githubusercontent.com/mist-whisper/Surge/master/Modules/Skip-Proxy-Lists.sgmodule)
