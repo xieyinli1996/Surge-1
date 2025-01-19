@@ -1,9 +1,9 @@
 #!name = 订阅通会员
 #!desc = 解锁订阅通会员
-#!openUrl = https://github.com/mist-whisper/Surge/tree/master/Modules
-#!author = chxm1023
-#!homepage = https://github.com/chxm1023/Rewrite/blob/main/iTunes.js
-#!icon = 
+#!openUrl = 
+#!author = 骨钉[https://github.com/Guding88]
+#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
+#!icon = https://raw.githubusercontent.com/mist-whisper/Lcons/refs/heads/master/Doraemon/Doraemon-1093.png
 #!date = 2024-07-24 15:44:57
 #!category = 会员解锁
 
