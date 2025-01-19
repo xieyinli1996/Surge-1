@@ -1,11 +1,11 @@
-#!name = 芒果TV会员
-#!desc = 国内影视平台去广告，解锁芒果TV会员（含国区，美区，平板端）。电视端不可用。
-#!openUrl = https://github.com/mist-whisper/Surge/tree/master/Modules
-#!author = RuCu6 Yu9191
-#!homepage = https://github.com/RuCu6/QuanX/blob/main/Rewrites/Cube/cnftp.snippet
-#!icon = 
+#!name = 国内影视平台去广告
+#!desc = 国内影视平台去广告。
+#!openUrl = 
+#!author = RuCu6[https://github.com/Rucu6],Yu9191[https://github.com/Yu9191]
+#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
+#!icon = https://raw.githubusercontent.com/mist-whisper/Lcons/master/Loon_icon/11.png
 #!update = 2024-07-22 22:45
-#!category = 解锁去广告
+#!category = 去广告
 
 [URL Rewrite]
 # 无用请求
