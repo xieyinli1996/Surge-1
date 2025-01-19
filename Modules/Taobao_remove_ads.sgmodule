@@ -1,22 +1,21 @@
 #!name = 淘宝去广告
 #!desc = 过滤淘宝开屏广告
-#!openUrl = https://apps.apple.com/app/id387682726
-#!author = RuCu6
-#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin
-#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Taobao.png
-#!date = 2024-01-25 18:00:54
+#!openUrl = 
+#!author = RuCu6[https://github.com/RuCu6]
+#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
+#!icon = https://raw.githubusercontent.com/mist-whisper/Lcons/refs/heads/master/App_icon/120px/Taobao.png
+#!date = 2024-11-28 00:00:00
 #!category = 去广告
 
 [Rule]
-DOMAIN,adashx.m.taobao.com,REJECT
-DOMAIN,ossgw.alicdn.com,REJECT
-DOMAIN,ems.youku.com,REJECT
-DOMAIN,hudong.alicdn.com,REJECT
-DOMAIN,h-adashx.ut.taobao.com,REJECT
-DOMAIN,ut.taobao.com,REJECT
+DOMAIN,adashx.m.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN,ossgw.alicdn.com,REJECT,extended-matching,pre-matching
+DOMAIN,ems.youku.com,REJECT,extended-matching,pre-matching
+DOMAIN,hudong.alicdn.com,REJECT,extended-matching,pre-matching
+DOMAIN,h-adashx.ut.taobao.com,REJECT,extended-matching,pre-matching
+DOMAIN,ut.taobao.com,REJECT,extended-matching,pre-matching
 
 [Map Local]
-# 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) data-type=text data="{}" status-code=200
 
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200
@@ -40,9 +39,9 @@ DOMAIN,ut.taobao.com,REJECT
 ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200
 
 [Script]
-移除淘宝开屏广告 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Taobao/Taobao_remove_ads.js, requires-body=true
+移除淘宝开屏广告 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/Taobao/Taobao_remove_ads.js, requires-body=true
 
-移除淘宝开屏广告 = type=http-response, pattern=^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json, script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Taobao/Taobao_remove_ads.js, requires-body=true
+移除淘宝开屏广告 = type=http-response, pattern=^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/Taobao/Taobao_remove_ads.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
