@@ -1,0 +1,11 @@
+#!name = 隐藏VPN图标
+#!desc = 隐藏VPN图标
+#!openUrl = 
+#!author = whisper[https://github.com/mist-whisper]
+#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
+#!icon = 
+#!date = 2024-11-28 00:00:00
+#!category = 功能增强
+
+[General]
+hide-vpn-icon = true
