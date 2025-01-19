@@ -8,8 +8,7 @@
 #!category = 会员解锁
 
 [Script]
-# 订阅通会员解锁
-# hostname = buy.itunes.apple.com
-Subscriptions = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mist-whisper/JS/master/Subscriptions.js
+订阅通会员 = type=http-response, pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/Subtrack/Subtrack.js, requires-body=true, timeout=60
+
 [MITM]
 hostname = %APPEND% buy.itunes.apple.com
