@@ -1,0 +1,14 @@
+#!name = Fimo复古胶片相机会员
+#!desc = 解锁FIMO复古胶片相机会员
+#!openUrl = 
+#!author = chxm1023[https://github.com/chxm1023]
+#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
+#!icon = https://raw.githubusercontent.com/mist-whisper/Lcons/refs/heads/master/Doraemon/Doraemon-1034.png
+#!date = 2024-08-19 14:30
+#!category = 会员解锁
+
+[Script]
+Fimo复古胶片相机会员解锁 = type=http-response,pattern=^https?:\/\/server\.(yoyiapp|zbisq)\.com,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/FIMO/FIMO.js
+
+[MITM]
+hostname = %APPEND% server.*.com
