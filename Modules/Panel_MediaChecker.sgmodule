@@ -8,6 +8,7 @@
 #!version = 3.3.0
 #!category = 面板模块
 
+[Panel]
 stream-all = script-name=stream-all, title="流媒体解锁检测", content="请刷新面板", update-interval={{{UPDATE_INTERVAL}}}
 
 [Script]
