@@ -1,13 +1,11 @@
-#!name=酷我音乐去广告
-#!desc=解锁会员皮肤、会员音频(至高320K)、听书权限。移除开屏广告、各类弹窗、悬浮窗、各类横幅广告、信息流广告、歌词评论区广告和播放器界面广告，精简侧边栏。
-#!author=可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md],404_Not_Found[https://github.com/Yuheng0101]
-#!icon=https://raw.githubusercontent.com/mist-whisper/Lcons/refs/heads/master/App_icon/120px/Kuwo.png
-#!tag=解锁去广告
-#!system=ios
-#!system_version=15
-#!loon_version=3.2.4(787)
-#!homepage=https://github.com/luestr/ProxyResource/blob/main/README.md
-#!date=2024-11-28 00:00:00
+#!name = 酷我音乐去广告
+#!desc = 解锁会员皮肤、会员音频(至高320K)、听书权限。移除开屏广告、各类弹窗、悬浮窗、各类横幅广告、信息流广告、歌词评论区广告和播放器界面广告，精简侧边栏。
+#!openUrl = 
+#!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md],404_Not_Found[https://github.com/Yuheng0101]
+#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
+#!icon = https://raw.githubusercontent.com/mist-whisper/Lcons/refs/heads/master/App_icon/120px/Kuwo.png
+#!date = 2024-11-28 00:00:00
+#!category = 解锁去广告
 
 [Rule]
 DOMAIN,serveraddr.service.kugou.com,REJECT
