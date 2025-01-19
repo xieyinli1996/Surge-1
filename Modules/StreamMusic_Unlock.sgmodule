@@ -1,17 +1,14 @@
 #!name = 音流会员
-#!desc = 永久解锁音流会员
-#!openUrl = https://github.com/mist-whisper/Surge/tree/master/Modules
-#!author = osinx
-#!homepage = https://github.com/osinx/Script/blob/main/vip/streamMusic.plugin
-#!icon = https://raw.githubusercontent.com/osinx/Script/main/icon/streamMusic.png
+#!desc = 永久解锁音流会员，购买会员-通过支付宝订单号恢复购买-任意输入确认即可
+#!openUrl = 
+#!author = osinx[https://github.com/osinx]
+#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
+#!icon = https://raw.githubusercontent.com/mist-whisper/Lcons/refs/heads/master/App_icon/StreamMusic.png
 #!date = 2024-07-06 20:05:57
 #!category = 会员解锁
 
-#！正确的恢复内购
-#！购买会员-通过支付宝订单号恢复购买-任意输入确认即可
-
 [Script]
-音流解锁VIP = type=http-response, pattern=^https:\/\/pay\.aqzscn\.cn\/api\/v1\/payments\/, script-path=https://raw.githubusercontent.com/osinx/Script/main/vip/streamMusic.js, requires-body=true
+音流解锁VIP = type=http-response, pattern=^https:\/\/pay\.aqzscn\.cn\/api\/v1\/payments\/, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/StreamMusic/StreamMusic.js, requires-body=true
 
 [MITM]
 hostname = %APPEND% pay.aqzscn.cn
