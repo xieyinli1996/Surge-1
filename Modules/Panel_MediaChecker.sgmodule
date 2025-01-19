@@ -1,5 +1,5 @@
-#!name = 第三方服务检测
-#!desc = 用于检测流媒体等服务的解锁情况
+#!name = 流媒体解锁检测
+#!desc = 用于检测流媒体服务的解锁情况
 #!openUrl = 
 #!author = Rabbit-Spec[https://github.com/Rabbit-Spec]
 #!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
