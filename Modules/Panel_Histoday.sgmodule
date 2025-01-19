@@ -10,4 +10,4 @@
 [Panel]
 Histoday=script-name=历史上的今天
 [Script]
-Histoday= type=generic,script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/Tools/Histoday.js,argument=icon=calendar&color=#bf2f24&count=
+Histoday= type=generic,script-path=https://raw.githubusercontent.com/deezertidal/Surge_Module/master/files/histoday.js,argument=icon=calendar&color=#bf2f24&count=
