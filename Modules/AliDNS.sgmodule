@@ -5,7 +5,7 @@
 #!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
 #!icon = 
 #!date = 2024-08-03 12:40:57
-#!category = DNS解析
+#!category = DNS
 #!arguments = 阿里DNS:223.5.5.5,请求域名:*,请求类型:1,Device ID:IOS,Account ID,AccessKey ID,AccessKey Secret
 #!arguments-desc = 相关参数说明查阅 阿里云DoH JSON API 文档
 
