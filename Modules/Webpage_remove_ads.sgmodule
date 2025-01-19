@@ -1,13 +1,11 @@
-#!name=网页去广告
-#!desc=移除网页广告。
-#!author=RuCu6[https://github.com/RuCu6]
-#!icon=https://raw.githubusercontent.com/mist-whisper/Lcons/refs/heads/master/App_icon/webpage.png
-#!tag=去广告
-#!system=ios
-#!system_version=15
-#!loon_version=3.2.4(787)
-#!homepage=https://github.com/mist-whisper/Loon/blob/master/README.md
+#!name = 网页去广告
+#!desc = 移除网页广告。
+#!openUrl = 
+#!author = RuCu6[https://github.com/RuCu6]
+#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
+#!icon = https://raw.githubusercontent.com/mist-whisper/Lcons/refs/heads/master/App_icon/webpage.png
 #!date=2024-12-18 22:05
+#!category = 锁去广告
 
 [URL Rewrite]
 # Avple跳转弹窗 //asserts.avple.tv
