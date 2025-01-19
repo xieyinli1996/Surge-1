@@ -5,7 +5,7 @@
 #!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
 #!icon = https://raw.githubusercontent.com/mist-whisper/Lcons/refs/heads/master/App_icon/webpage.png
 #!date=2024-12-18 22:05
-#!category = 锁去广告
+#!category = 去广告
 
 [URL Rewrite]
 # Avple跳转弹窗 //asserts.avple.tv
