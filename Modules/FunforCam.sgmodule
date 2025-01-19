@@ -1,9 +1,9 @@
 #!name = 方弗相机会员
-#!desc = 解锁方弗相机会员。
-#!openUrl = https://github.com/mist-whisper/Surge/tree/master/Modules
-#!author = 伟人
-#!homepage = https://github.com/WeiGiegie/666/blob/main/ffxj.js
-#!icon = 
+#!desc = 解锁方弗相机会员
+#!openUrl = 
+#!author = 骨钉[https://github.com/Guding88]
+#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
+#!icon = https://raw.githubusercontent.com/mist-whisper/Lcons/refs/heads/master/Doraemon/Doraemon-1045.png
 #!update = 2024-06-12 12:20
 #!category = 会员解锁
 
