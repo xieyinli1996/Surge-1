@@ -1,11 +1,14 @@
-#!name = 微信外部链接解锁
-#!desc = 解锁微信外部链接访问限制，跳过中间界面。支付宝链接、被封禁链接进行通知弹窗跳转，在微信中用快照显示被封禁的链接（可选），在微信中进行强制重定向（可选），群聊及扫码均可使用，可选项可在脚本的2~3行更改，也可在BoxJs中更改。
-#!openUrl = https://apps.apple.com/app/id414478124
-#!author = zZPiglet
-#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin
-#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/main/App_icon/120px/Weixin.png
-#!date = 2024-01-17 19:20:19
+#!name = WeChat增强
+#!desc = WeChat广告过滤，解锁微信外部链接。\n使用前需要选择让WeChat域名走的策略组名。
+#!openUrl = 
+#!author = ld2j[https://github.com/LD2J0618],RuCu6[https://github.com/RuCu6],可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md],VirgilClyne,zZPiglet[https://github.com/zZPiglet]
+#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
+#!icon = https://raw.githubusercontent.com/mist-whisper/Lcons/refs/heads/master/App_icon/120px/Weixin.png
+#!date = 2024-11-17 15:27:59
 #!category = 优化增强
+
+#!arguments = Proxy:你的策略组
+#!arguments-desc = Proxy:选择策略组，将微信&WeChat相关域名分流，直连请输入DIRECT，代理请输入你的策略组名 \n\nREAD ME:1.本模块内置有分流规则，因此无需另外添加分流，如之前有添加请去除，2.本模块使用需要在编辑参数里输入你现有且想让WeChat/微信域名走的策略组名
 
 [Rule]
 # 微信公众号广告过滤
@@ -25,34 +28,38 @@ DOMAIN-KEYWORD,wechatpay,DIRECT
 DOMAIN,epay.ahrcu.com,DIRECT
 DOMAIN,mixpay.wechat.com,DIRECT
 # 使用参数中的 Proxy 策略组
-DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net,DIRECT
-DOMAIN,btrace.qq.com,DIRECT
-DOMAIN,dldir1.qq.com,DIRECT
-DOMAIN,slife.xy-asia.com,DIRECT
-DOMAIN,soup.v.qq.com,DIRECT
-DOMAIN,vweixinf.tc.qq.com,DIRECT
-DOMAIN,weixin110.qq.com,DIRECT
-DOMAIN,wup.imtt.qq.com,DIRECT
-DOMAIN-SUFFIX,iot-tencent.com,DIRECT
-DOMAIN-SUFFIX,lbs.gtimg.com,DIRECT
-DOMAIN-SUFFIX,map.qq.com,DIRECT
-DOMAIN-SUFFIX,qlogo.cn,DIRECT
-DOMAIN-SUFFIX,qpic.cn,DIRECT
-DOMAIN-SUFFIX,tenpay.com,DIRECT
-DOMAIN-SUFFIX,up-hl.3g.qq.com,DIRECT
-DOMAIN-SUFFIX,vweixinthumb.tc.qq.com,DIRECT
-DOMAIN-SUFFIX,weixin.com,DIRECT
-DOMAIN-SUFFIX,weixin.qq.com,DIRECT
-DOMAIN-SUFFIX,weixinbridge.com,DIRECT
-DOMAIN-SUFFIX,weixinsxy.com,DIRECT
-DOMAIN-SUFFIX,wx.gtimg.com,DIRECT
-DOMAIN-SUFFIX,wx.qq.com,DIRECT
-DOMAIN-SUFFIX,wxapp.tc.qq.com,DIRECT
-DOMAIN-SUFFIX,wxs.qq.com,DIRECT
-DOMAIN-SUFFIX,yun-hl.3g.qq.com,DIRECT
-USER-AGENT,"MicroMessenger*",DIRECT
-USER-AGENT,"WeChat*",DIRECT
-IP-ASN,132203,DIRECT,no-resolve
+DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net,{{{Proxy}}}
+DOMAIN,btrace.qq.com,{{{Proxy}}}
+DOMAIN,dldir1.qq.com,{{{Proxy}}}
+DOMAIN,slife.xy-asia.com,{{{Proxy}}}
+DOMAIN,soup.v.qq.com,{{{Proxy}}}
+DOMAIN,vweixinf.tc.qq.com,{{{Proxy}}}
+DOMAIN,weixin110.qq.com,{{{Proxy}}}
+DOMAIN,wup.imtt.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,iot-tencent.com,{{{Proxy}}}
+DOMAIN-SUFFIX,lbs.gtimg.com,{{{Proxy}}}
+DOMAIN-SUFFIX,map.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,qlogo.cn,{{{Proxy}}}
+DOMAIN-SUFFIX,qpic.cn,{{{Proxy}}}
+DOMAIN-SUFFIX,servicewechat.com,{{{Proxy}}}
+DOMAIN-SUFFIX,tenpay.com, {{{Proxy}}}
+DOMAIN-SUFFIX,up-hl.3g.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,vweixinthumb.tc.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,wechat.com,{{{Proxy}}}
+DOMAIN-SUFFIX,wechatlegal.net,{{{Proxy}}}
+DOMAIN-SUFFIX,wechatos.net,{{{Proxy}}}
+DOMAIN-SUFFIX,weixin.com,{{{Proxy}}}
+DOMAIN-SUFFIX,weixin.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,weixinbridge.com,{{{Proxy}}}
+DOMAIN-SUFFIX,weixinsxy.com,{{{Proxy}}}
+DOMAIN-SUFFIX,wx.gtimg.com,{{{Proxy}}}
+DOMAIN-SUFFIX,wx.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,wxapp.tc.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,wxs.qq.com,{{{Proxy}}}
+DOMAIN-SUFFIX,yun-hl.3g.qq.com,{{{Proxy}}}
+USER-AGENT,MicroMessenger*,{{{Proxy}}}
+USER-AGENT,WeChat*,{{{Proxy}}}
+IP-ASN,132203,{{{Proxy}}}, no-resolve
 
 [URL Rewrite]
 ^https:\/\/webapi\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert-reach - reject
