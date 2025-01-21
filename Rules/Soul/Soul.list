@@ -4,7 +4,7 @@
 # UPDATED: 2024-12-30
 
 DOMAIN-SUFFIX,soulapp.cn
-KEYWORD,soulapp
+DOMAIN-KEYWORD,soulapp
 
 ip-cidr,8.210.3.170/32,no-resolve
 ip-cidr,43.231.145.10/32,no-resolve
