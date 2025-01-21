@@ -1,1 +1,1 @@
-https://github.com/mist-whisper/Surge/blob/master/Rules/AdRules/AdRules.list
+https://raw.githubusercontent.com/mist-whisper/Surge/refs/heads/master/Rules/AdRules/AdRules.list
