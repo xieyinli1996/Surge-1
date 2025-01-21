@@ -1,8 +1,5 @@
 Apple Other
 
-# Apple books
-DOMAIN, buy.itunes.apple.com
-# Apple podcast
-DOMAIN, feeds.acast.com
-# Apple AI
-DOMAIN, apple-relay.apple.com
+DOMAIN, buy.itunes.apple.com // Apple books
+DOMAIN, feeds.acast.com // Apple podcast
+DOMAIN, apple-relay.apple.com // Apple AI
