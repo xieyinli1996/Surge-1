@@ -1,11 +1,14 @@
 # NAME: Global
 # AUTHOR: Sukka Edward
 # HOMEPAGE: https://ruleset.skk.moe/List/non_ip/global.conf
-# UPDATED: 2025-01-21
+# UPDATED: 2025-03-02
 # This file contains rules for services that are not available inside the Mainland China.
 
 #DOMAIN,this_ruleset_is_made_by_sukkaw.ruleset.skk.moe
 
+DOMAIN,uscardforum.com
+DOMAIN,missav.ai
+DOMAIN,missav.ws
 DOMAIN,1lib.sk
 DOMAIN,pki.goog
 DOMAIN,addons.mozilla.org
