@@ -47,6 +47,7 @@
 * [喜马拉雅去广告](https://raw.githubusercontent.com/mist-whisper/Surge/refs/heads/master/Modules/Himalaya_remove_ads.sgmodule)
 * [京东比价](https://raw.githubusercontent.com/mist-whisper/Surge/refs/heads/master/Modules/JD_Price.sgmodule)
 * [京东去广告](https://raw.githubusercontent.com/mist-whisper/Surge/refs/heads/master/Modules/JD_remove_ads.sgmodule)
+* [快手去广告](https://raw.githubusercontent.com/mist-whisper/Surge/refs/heads/master/Modules/KuaiShou_remove_ads.sgmodule)
 * [酷狗音乐去广告](https://raw.githubusercontent.com/mist-whisper/Surge/refs/heads/master/Modules/KuGou_remove_ads.sgmodule)
 * [酷我音乐去广告](https://raw.githubusercontent.com/mist-whisper/Surge/refs/heads/master/Modules/Kuwo_remove_ads.sgmodule)
 * [苹果定位增强](https://raw.githubusercontent.com/mist-whisper/Surge/refs/heads/master/Modules/Location.sgmodule)
