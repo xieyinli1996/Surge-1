@@ -4,14 +4,15 @@
 #!author = 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
 #!icon = https://raw.githubusercontent.com/mist-whisper/Icons/refs/heads/master/App_icon/120px/XiaoHeiHe.png
-#!date = 2024-12-23 11:27:16
+#!date = 2025-03-05 01:08:08
 #!category = 去广告
 
-[Map Local]
-^https:\/\/api\.xiaoheihe\.cn\/account\/get_ads_info_v2 data-type=text data="{}" status-code=200
+[Body Rewrite]
+http-response-jq ^https:\/\/api\.xiaoheihe\.cn\/bbs\/app\/feeds\/news '.result.links |= map(if .content_type == 27 then del(.title, .ad_pm, .img_gif, .idea_id, .ad_report, .label, .source, .intranet_only, .ad_cm, .content_type, .protocol, .img, .ad_ratio) else . end)'
 
-[Script]
-移除热点板块信息流广告 = type=http-response, pattern=^https:\/\/api\.xiaoheihe\.cn\/bbs\/app\/feeds\/news, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/XiaoHeiHe/XiaoHeiHe_remove_ads.js, requires-body=true
+[Map Local]
+# 开屏广告
+^https:\/\/api\.xiaoheihe\.cn\/account\/get_ads_info_v2 data-type=text data="{}" status-code=200
 
 [MITM]
 hostname = %APPEND% api.xiaoheihe.cn
