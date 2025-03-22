@@ -4,15 +4,11 @@
 #!author = RuCu6[https://github.com/RuCu6],fmz200[https://github.com/fmz200]
 #!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
 #!icon = https://raw.githubusercontent.com/mist-whisper/Lcons/refs/heads/master/App_icon/120px/RedPaper.png
-#!date = 2025-03-19 22:54
+#!date = 2025-03-22
 #!category = 去广告
 
 [Rule]
 AND,((PROTOCOL,QUIC),(DOMAIN-SUFFIX,xiaohongshu.com)),REJECT
-
-[Body Rewrite]
-# 评论区用户id置空（live图不适用）
-http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/comment\/list red_id fmz200
 
 [Map Local]
 # 惊喜弹窗
@@ -27,7 +23,7 @@ http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/comment\
 
 ^https?:\/\/www\.xiaohongshu\.com\/api\/sns\/(v\d\/ads\/resource|v\d\/hey\/\w+\/hey_gallery) data-type=text data="{}" status-code=200
 
-# 评论区图片水印（live图不适用）
+# 评论区图片水印
 ^https?:\/\/ci\.xiaohongshu\.com\/system_config\/watermark data-type=tiny-gif status-code=200
 
 [Script]
@@ -54,6 +50,11 @@ http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/comment\
 移除图片视频水印 = type=http-response, pattern=^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(v2\/note\/feed|v3\/note\/videofeed)\?, script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60
 
 移除图片视频水印 = type=http-response, pattern=^https?:\/\/(edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(v4\/note\/videofeed|v10\/note\/video\/save)\?, script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60
+
+# 小红书评论区水印
+移除小红书评论区水印 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/note\/comment\/list\?, script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60
+
+移除小红书评论区水印 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/interaction\/comment\/video\/download\?, script-path=https://github.com/fmz200/wool_scripts/raw/main/Scripts/xiaohongshu/xiaohongshu.js, requires-body=true, timeout=60
 
 [MITM]
 hostname = %APPEND% edith.xiaohongshu.com, www.xiaohongshu.com, ci.xiaohongshu.com, rec.xiaohongshu.com
