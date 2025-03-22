@@ -1,5 +1,5 @@
 #!name = 小红书去广告
-#!desc = 过滤信息流推广，移除笔记和评论区图片视频以及live图水印，如有异常，请先清除缓存再尝试。
+#!desc = 过滤信息流推广，移除笔记和评论区图片视频以及live图水印，移除评论区表情包保存限制，如有异常，请先清除缓存或开启代理接管后再尝试。
 #!openUrl = 
 #!author = RuCu6[https://github.com/RuCu6],fmz200[https://github.com/fmz200]
 #!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
