@@ -1,5 +1,5 @@
 #!name = 谷歌增强
-#!desc = 谷歌搜索内容时并发使用多个策略，以避免可能出现的人机验证。需要在插件参数填写策略名的正则表达式。将Google搜索重定向至.com域名，如遇频繁跳转请禁用本插件。
+#!desc = 谷歌搜索内容时并发使用多个策略，以避免可能出现的人机验证。需要在模块参数填写策略名的正则表达式。将Google搜索重定向至.com域名，如遇频繁跳转请禁用本模块。
 #!openUrl = 
 #!author = NobyDa[https://github.com/NobyDa],可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md]
 #!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
@@ -8,7 +8,7 @@
 #!category = 优化增强
 
 #!arguments = 策略正则,脚本引擎:auto
-#!arguments-desc = 策略正则：策略/策略组名的正则表达式，例如：\n^(🇸🇬|🇭🇰)\s.*\d+$ 如需同时使用所有策略/策略组可使用 .+ 表示。\n\n脚本引擎：jsc/webview/auto，默认auto。
+#!arguments-desc = 策略正则：策略/策略组名的正则表达式，例如：\n^(🇸🇬|🇺🇸)\s.*\d+$ 如需同时使用所有策略/策略组可使用 .+ 表示。\n\n脚本引擎：jsc/webview/auto，默认auto。
 
 [URL Rewrite]
 ^https?://(www.)?g.cn https://www.google.com 302
