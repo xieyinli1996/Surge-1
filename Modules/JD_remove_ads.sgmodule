@@ -1,10 +1,10 @@
 #!name = 京东去广告
 #!desc = 移除京东开屏广告，精简我的页面产品推广，下滑或点击商品详情即可显示比价信息。\n首次使用需要下载慢慢买APP，点击我的页面获取CK数据，无需登录。
 #!openUrl = 
-#!author = RuCu6[https://github.com/RuCu6]
+#!author = RuCu6[https://github.com/RuCu6], githubdulong[https://github.com/githubdulong], wish[https://github.com/mist-whisper], wf021325[https://github.com/wf021325]
 #!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
 #!icon = https://raw.githubusercontent.com/mist-whisper/Icon/master/App_icon/120px/JD.png
-#!date = 2025-04-19
+#!date = 2025-04-22 00:16:00
 #!category = 去广告增强
 
 [Rule]
@@ -20,7 +20,7 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve,pre-matching
 [Script]
 移除京东广告 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/JD/JD_remove_ads.js, requires-body=true
 
-获取慢慢买ck = type=http-request,pattern=^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com/baoliao\/center\/menu,requires-body=1,max-size=0,binary-body-mode=0,script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/JD/MmmCK.js
+获取慢慢买ck = type=http-request,pattern=^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com/baoliao\/center\/menu,requires-body=1,max-size=0,binary-body-mode=0,script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/JD/JD_Price.js
 
 京东比价 = type=http-response,pattern=^https:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html,requires-body=1,max-size=0,binary-body-mode=0,script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/JD/JD_Price.js,timeout=30
 
