@@ -7,6 +7,9 @@
 #!date = 2025-04-22 00:16:00
 #!category = 去广告增强
 
+#!arguments=账号捕获:获取慢慢买CK,DISABLE_NOTICE:true,THEME_TIME:7-19
+#!arguments-desc=[参数设置]\n账号捕获:慢慢买 CK 脚本启停\n   ├ 慢慢买CK：启用（默认值）\n   └ 填入"#"：获取后注释停用\nDISABLE_NOTICE: 是否启用转链及通知功能\n   ├ false：禁用转链与通知功能（默认），仅显示比价图表\n   └ true：启用转链与通知\nTHEME_TIME: 自定义深色模式时间范围\n   ├ 格式：起始小时-结束小时（默认 7~19为浅色模式）\n   └ 示例：6-22 表示每天 22:00~6:00 为深色模式时间段
+
 [Rule]
 DOMAIN,dns.jd.com,REJECT,extended-matching,pre-matching
 URL-REGEX,"^http:\/\/\w{32}\.jddebug\.com\/diagnose\?",REJECT,extended-matching
@@ -18,11 +21,11 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve,pre-matching
 
 ^https?:\/\/m\.360buyimg\.com\/mobilecms\/s1125x2436_jfs data-type=text data=" " status-code=200
 [Script]
-移除京东广告 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/JD/JD_remove_ads.js, requires-body=true
+移除京东广告 = type=http-response, pattern=^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/JD/JD_remove_ads.js, requires-body=true
 
-获取慢慢买ck = type=http-request,pattern=^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com/baoliao\/center\/menu,requires-body=1,max-size=0,binary-body-mode=0,script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/JD/JD_Price.js
+{{{账号捕获}}} = type=http-request,pattern=^https?:\/\/apapia-sqk-weblogic\.manmanbuy\.com/baoliao\/center\/menu,requires-body=1,max-size=0,binary-body-mode=0,script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/JD/JD_Price.js
 
-京东比价 = type=http-response,pattern=^https:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html,requires-body=1,max-size=0,binary-body-mode=0,script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/JD/JD_Price.js,timeout=30
+京东比价 = type=http-response,pattern=^https:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html,requires-body=1,max-size=0,binary-body-mode=0,script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/JD/JD_Price.js,timeout=30,argument=disable_notice={{{DISABLE_NOTICE}}}&theme_time={{{THEME_TIME}}}
 
 [MITM]
 hostname = %APPEND% in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com, m.360buyimg.com
