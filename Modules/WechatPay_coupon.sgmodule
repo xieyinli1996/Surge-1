@@ -16,4 +16,4 @@
 金币获取 = type=cron,cronexp=30 9 * * *,timeout=60,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/wechat_pay_coupon.js,script-update-interval=0,argument="{"coupon":{{{金币获取}}}}"
 
 [MITM]
-hostname = payapp.weixin.qq.com
+hostname = %APPEND% payapp.weixin.qq.com
