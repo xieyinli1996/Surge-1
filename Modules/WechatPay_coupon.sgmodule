@@ -1,0 +1,19 @@
+#!name = 微信支付有优惠定时领金币
+#!desc = 每天定时自动领微信支付有优惠的金币。\n首次安装模块后需进入“微信支付有优惠”小程序获取CK，获取后即可关闭。
+#!openUrl = 
+#!author = FoKit[https://github.com/FoKit]
+#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
+#!icon = https://raw.githubusercontent.com/mist-whisper/Icon/master/MyIcon/WechatPay.png
+#!date = 2024-05-18
+#!category = 功能增强
+
+#!arguments = 账号捕获:获取cookie, 金币获取:定时自动领取金币
+#!arguments-desc = [参数设置]\n账号捕获:获取cookie脚本启停\n   ├ 获取cookie：启用（默认值）\n   └ 填入"#"：获取后注释停用\n金币获取:定时自动领取金币脚本启停\n   ├ 定时自动领取金币：启用（默认值）\n   └ 填入"#"：获取后注释停用
+
+[Script]
+账号捕获 = type=http-response,pattern=https:\/\/payapp\.weixin\.qq\.com\/(coupon-center-user\/home\/login|coupon-center-award\/award\/detail),requires-body=1,max-size=0,binary-body-mode=0,timeout=30,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/wechat_pay_coupon.js,script-update-interval=0,argument="{"cookie":{{{账号捕获}}}}"
+
+金币获取 = type=cron,cronexp=30 9 * * *,timeout=60,script-path=https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/wechat_pay_coupon.js,script-update-interval=0,argument="{"coupon":{{{金币获取}}}}"
+
+[MITM]
+hostname = payapp.weixin.qq.com
