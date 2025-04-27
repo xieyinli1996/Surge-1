@@ -8,7 +8,7 @@
 #!category = 功能增强
 
 #!arguments=客户端账号捕获:客户端CK, 网页版账号捕获:网页版CK, B站每日任务:每日等级任务, CRONEXP: 0 8 * * *
-#!arguments-desc = [参数设置]\n客户端账号捕获:获取客户端 CK 脚本启停\n   ├ 客户端CK：启用（默认值）\n   └ 填入"#"：获取后注释停用\n网页版账号捕获:获取网页版 CK 脚本启停\n   ├ 网页版CK：启用（默认值）\n   └ 填入"#"：获取后注释停用\nB站每日任务:每日等级任务脚本启停\n   ├ 每日等级任务：启用（默认值）\n   └ 填入"#"：获取后注释停用，建议保持开启。\nCRONEXP:输入符合CRON表达式的参数
+#!arguments-desc = [参数设置]\n客户端账号捕获:获取客户端 CK 脚本启停\n   ├ 客户端CK：启用（默认值）\n   └ 填入"#"：获取后注释停用\n网页版账号捕获:获取网页版 CK 脚本启停\n   ├ 网页版CK：启用（默认值）\n   └ 填入"#"：获取后注释停用\nB站每日任务:每日等级任务脚本启停\n   ├ 每日等级任务：启用（默认值）\n   └ 填入"#"：注释后停用。\nCRONEXP:输入符合CRON表达式的参数
 
 [Script]
 客户端账号捕获 = type=http-request,pattern=^https?:\/\/cm\.bilibili\.com\/cm\/api\/fees\/wise$,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0,argument="{"BiliBiliCookieAPP":{{{客户端账号捕获}}}}"
