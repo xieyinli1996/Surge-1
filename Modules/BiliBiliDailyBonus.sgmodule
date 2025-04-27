@@ -1,0 +1,21 @@
+#!name = 哔哩哔哩每日等级任务
+#!desc = 每天自动完成哔哩哔哩等级任务。\n首次安装模块需打开BiliBili自动获取Cookie。\n保持开启状态时检测到Cookie变更会自动更新，解决Cookie经常过期的问题(Cookie有效时不提示更新)。
+#!openUrl = 
+#!author = ClydeTime[https://github.com/ClydeTime], wish[https://github.com/mist-whisper]
+#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
+#!icon = https://raw.githubusercontent.com/mist-whisper/Icon/master/MyIcon/DailyBonus.png
+#!date = 2025-04-27 14:31:00
+#!category = 功能增强
+
+#!arguments=客户端账号捕获:客户端CK, B站每日任务:每日等级任务, CRONEXP: 0 8 * * *
+#!arguments-desc = [参数设置]\n客户端账号捕获:获取客户端 CK 脚本启停\n   ├ 客户端CK：启用（默认值）\n   └ 填入"#"：获取后注释停用\nB站每日任务:每日等级任务脚本启停\n   ├ 每日等级任务：启用（默认值）\n   └ 填入"#"：获取后注释停用，建议保持开启。
+
+[Script]
+客户端账号捕获 = type=http-request,pattern=^https?:\/\/cm\.bilibili\.com\/cm\/api\/fees\/wise$,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0,argument="{"BiliBiliCookieAPP":{{{客户端账号捕获}}}}"
+
+# 网页版账号捕获 = type=http-request,pattern=^https?:\/\/m\.bilibili\.com/$,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0,argument="{"BiliBiliCookieWEB":{{{网页版账号捕获}}}}"
+
+B站每日任务 = type=cron,cronexp={{{CRONEXP}}},script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,wake-system=1,timeout=15,argument="{"DailyBonus":{{{B站每日任务}}}}"
+
+[MITM]
+hostname = %APPEND% cm.bilibili.com, m.bilibili.com
