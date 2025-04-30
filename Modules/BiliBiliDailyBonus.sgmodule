@@ -11,11 +11,11 @@
 #!arguments-desc = [参数设置]\nappscript:获取客户端Cookie脚本启停\n   ├ 客户端Cookie：启用（默认值）\n   └ 填入"#"：获取后注释停用\nwebscript:获取网页版Cookie脚本启停\n   ├ 网页版Cookie：启用（默认值）\n   └ 填入"#"：获取后注释停用
 
 [Script]
+B站每日任务 = type=cron,cronexp=1 0 * * *,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,wake-system=1,timeout=15
+
 {{{appscript}}} = type=http-request,pattern=^https?:\/\/cm\.bilibili\.com\/cm\/api\/fees\/wise$,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
 
 {{{webscript}}} = type=http-request,pattern=^https?:\/\/m\.bilibili\.com/$,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
-
-B站每日任务 = type=cron,cronexp=1 0 * * *,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,wake-system=1,timeout=15
 
 [MITM]
 hostname = %APPEND% cm.bilibili.com, m.bilibili.com
