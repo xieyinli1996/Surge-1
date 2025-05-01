@@ -4,8 +4,11 @@
 #!author = RuCu6[https://github.com/RuCu6]
 #!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
 #!icon = https://raw.githubusercontent.com/mist-whisper/Icon/master/MyIcon/Blockads.png
-#!date = 2025-03-20
+#!date = 2025-05-01 16:18:00
 #!category = 去广告增强
+
+#!arguments = Dsenrp55去广告:跳转外部播放器
+#!arguments-desc = [参数设置]\nDsenrp55去广告:跳转外部播放器脚本启停\n   ├ 跳转外部播放器：启用（默认值）\n   └ 填入"#"：注释停用
 
 [Rule]
 # 12306
@@ -93,6 +96,7 @@ DOMAIN-SUFFIX,tsyndicate.com,REJECT
 ^https:\/\/dsenrp55\.com\/tabbar[356]$ https://dsenrp55.com/tabbar1 302
 
 [Header Rewrite]
+# 解决github速率限制返回429问题  raw.githubusercontent.com,gist.githubusercontent.com,github.com
 # ^https:\/\/(raw|gist)\.githubusercontent\.com\/ header-replace Accept-Language en-us
 http-request ^https:\/\/github\.com\/ header-replace 'Accept-Language' 'en-us'
 
@@ -237,7 +241,7 @@ http-response ^https:\/\/dsenrp55\.com\/tabbar </head> </head><style>.swiperBox,
 移除Missav广告 = type=http-response, pattern=^https:\/\/missav\.(?:ai|ws)\/(?!(build|fonts|img|js|api|cdn-cgi)\/)., script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/Missav.js, requires-body=true
 
 # dsenrp55
-移除Dsenrp55广告 = type=http-request, pattern=^https:\/\/ghfgnm\.com\/mmapi\/m3u8\/p\/.+\.m3u8, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/Dsenrp55.js, requires-body=true, timeout=60
+{{{Dsenrp55去广告}}} = type=http-request, pattern=^https:\/\/ghfgnm\.com\/mmapi\/m3u8\/p\/.+\.m3u8, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/Dsenrp55.js, requires-body=true, timeout=60
 
 [MITM]
 hostname = %APPEND% ad.12306.cn, mobile.12306.cn, list-app-m.i4.cn, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pan.baidu.com, 2023.redircdn.com, www.washpayer.com, api.douban.com, img3.doubanio.com, qnmob3.doubanio.com, img*.douban.com, frodo.douban.com, erebor.douban.com, image.mybank.icbc.com.cn, hfapp-service.qweather.net, acs-m.freshippo.com, gab.122.gov.cn, api.coolapk.com, adserviceretry.kglink.cn, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, api.m.mi.com, home.mi.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, ad.mcloud.139.com, jzts.cmpassport.com, boxer.baidu.com, m.baidu.com, www.baidu.com, zhidao.baidu.com, asserts.avple.tv, javdb.com, *.pornhub.com, 18hlw.com, lneuk.rslsilne.cc, 7054s.rbcmpeu.org, d2bkn61acaxm61.cloudfront.net, missav.ai, missav.ws, dsenrp55.com, ghfgnm.com
