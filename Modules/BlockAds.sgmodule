@@ -1,11 +1,11 @@
 #!name = BlockAds
-#!desc = 移除一些小广告。
+#!desc = 移除一些小广告，优化一些小功能。
 #!openUrl = 
 #!author = RuCu6[https://github.com/RuCu6]
 #!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
 #!icon = https://raw.githubusercontent.com/mist-whisper/Icon/master/MyIcon/Blockads.png
 #!date = 2025-03-20
-#!category = 去广告
+#!category = 去广告增强
 
 [Rule]
 # 12306
@@ -70,13 +70,13 @@ DOMAIN,sdkconfig.ad.xiaomi.com,REJECT
 # 云闪付 开屏广告
 DOMAIN,ads.95516.com,REJECT
 DOMAIN,switch.cup.com.cn,REJECT
-# missav
+# Missav
 DOMAIN-SUFFIX,creative.myavlive.com,REJECT
 DOMAIN-SUFFIX,trackwilltrk.com,REJECT
 DOMAIN-SUFFIX,tsyndicate.com,REJECT
 
 [URL Rewrite]
-# 爱思助手 //list-app-m.i4.cn
+# 爱思助手
 ^https:\/\/list-app-m\.i4\.cn\/(?:adclickcb|getHotSearchList|getopfstadinfo)\.xhtml - reject
 ^https?:\/\/img\d\.doubanio\.com\/view\/dale-online\/dale_ad\/ - reject
 ^https?:\/\/frodo\.douban\.com\/api\/v2\/movie\/banner - reject
@@ -89,6 +89,12 @@ DOMAIN-SUFFIX,tsyndicate.com,REJECT
 ^https:\/\/asserts\.avple\.tv\/file\/avple-images\/ad\.js - reject
 # PornHub
 ^https:\/\/(?:cn|www)\.pornhub\.com\/_xa\/ads(_batch)?\? - reject
+# Dsenrp55
+^https:\/\/dsenrp55\.com\/tabbar[356]$ https://dsenrp55.com/tabbar1 302
+
+[Header Rewrite]
+# ^https:\/\/(raw|gist)\.githubusercontent\.com\/ header-replace Accept-Language en-us
+http-request ^https:\/\/github\.com\/ header-replace 'Accept-Language' 'en-us'
 
 [Body Rewrite]
 http-response-jq ^https:\/\/api\.m\.mi\.com\/v1\/order\/expressView 'delpaths([["data","bottom","ad_info"]])'
@@ -98,14 +104,15 @@ http-response ^https:\/\/18hlw\.com <style> <style> .gotoclick{ display:none !im
 http-response ^https:\/\/lneuk\.rslsilne\.cc <style> <style> .gotoclick{ display:none !important} .modal{ display:none !important} .addbox{ display:none !important}
 http-response ^https:\/\/7054s\.rbcmpeu\.org <style> <style> .gotoclick{ display:none !important} .modal{ display:none !important} .addbox{ display:none !important}
 http-response ^https:\/\/d2bkn61acaxm61\.cloudfront\.net <style> <style> .gotoclick{ display:none !important} .modal{ display:none !important} .addbox{ display:none !important}
+http-response ^https:\/\/dsenrp55\.com\/tabbar </head> </head><style>.swiperBox,.adBox,.ad,.adItem,.start-page-container,.n-container,.intercept-18,div.van-tabbar-item:first-of-type,div.van-tabbar-item:last-of-type{display:none!important}img.back{margin:40px!important}</style>
 
 [Map Local]
-# 阿里云盘 //*api.alipan.com, member.alipan.com
+# 阿里云盘
 ^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders data-type=text data="{}" status-code=200
 
 ^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle data-type=text data="{}" status-code=200
 
-# 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
+# 阿里巴巴
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(?:allresource|predict) data-type=text data="{}" status-code=200
 
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200
@@ -128,10 +135,10 @@ http-response ^https:\/\/d2bkn61acaxm61\.cloudfront\.net <style> <style> .gotocl
 
 ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(?:volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200
 
-# 百度云 //pan.baidu.com
+# 百度云
 ^https:\/\/pan\.baidu\.com\/(?:act\/|aipic\/|aisearch\/|api\/getsyscfg\?|rest\/) data-type=text data="{}" status-code=200
 
-# 豆瓣 //api.douban.com, img3.doubanio.com, qnmob3.doubanio.com
+# 豆瓣
 ^https:\/\/api\.douban\.com\/v2\/app_ads\/splash\w+ data-type=text data="{}" status-code=200
 
 ^https:\/\/(?:img|qnmob)3\.doubanio\.com\/view\/dale-online\/dale_ad\/public\/\w+ data-type=text data="{}" status-code=200
@@ -140,19 +147,19 @@ http-response ^https:\/\/d2bkn61acaxm61\.cloudfront\.net <style> <style> .gotocl
 
 ^https?:\/\/api\.douban\.com\/b.*\/common_ads\?.* data-type=text data="{}" status-code=200
 
-# 和风天气 //hfapp-service.qweather.net
+# 和风天气
 ^https:\/\/hfapp-service\.qweather\.net\/v2\.0\/app\/ad\/list\? data-type=text data="{}" status-code=200
 
 # 盒马
 ^https:\/\/acs-m\.freshippo\.com\/gw\/mtop\.wdk\.render\.querysinglepage\/ data-type=text data="{}" status-code=200
 
-# 交管12123 //gab.122.gov.cn
+# 交管12123
 ^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery\/adver data-type=text data="{}" status-code=200
 
-# 酷安 //api.coolapk.com
+# 酷安
 ^https:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch data-type=text data="{}" status-code=200
 
-# 猫眼 //p0.pipi.cn
+# 猫眼
 ^https:\/\/p0\.pipi\.cn\/(?:adAdmin|mediaplus\/maoyantong_ads_fe)\/\w+\.jpg\?imageMogr2\/quality\/ data-type=text data="{}" status-code=200
 
 ^https:\/\/p0\.pipi\.cn\/(?:adAdmin|mediaplus\/maoyantong_ads_fe)\/\w+\.(?:jpg|png)\?imageMogr2\/thumbnail\/(?:860x0|!165x165|!1049x1169) data-type=text data="{}" status-code=200
@@ -160,7 +167,7 @@ http-response ^https:\/\/d2bkn61acaxm61\.cloudfront\.net <style> <style> .gotocl
 # 每日万年历
 ^http:\/\/app-cdn\.2q10\.com\/app\/ical\/honored\? data-type=text data="{}" status-code=200
 
-# 美团 & 美团外卖 //flowplus.meituan.net, img.meituan.net, s3plus.meituan.net
+# 美团 & 美团外卖
 ^http:\/\/wmapi\.meituan\.com\/api\/v7\/(?:loadInfo|openscreen|startpicture) data-type=text data="{}" status-code=200
 
 ^https:\/\/flowplus\.meituan\.net\/v1\/mss_\w+\/linglong\/\d+\.jpg data-type=text data="{}" status-code=200
@@ -171,63 +178,66 @@ http-response ^https:\/\/d2bkn61acaxm61\.cloudfront\.net <style> <style> .gotocl
 
 ^https:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(?:brandcpt-vedio|waimai-alita)\/\w+\.zip$ data-type=text data="{}" status-code=200
 
-# 网上国网 //osg-service.sgcc.com.cn
+# 网上国网
 ^https:\/\/osg-service\.sgcc\.com\.cn:18600\/emss-pfa-appset-front\/bootpageoutter\/ data-type=text data="{}" status-code=200
 
 ^https:\/\/api\.m\.mi\.com\/(?:v1\/(?:app\/popup_info|home\/page_feed|misearch\/search_input)|v2\/search\/search_default) data-type=text data="{}" status-code=200
 
 ^https:\/\/shop-api\.retail\.mi\.com\/mtop\/navi\/(?:rec\/merge\/|skywheel\/mishop\/splash) data-type=text data="{}" status-code=200
 
-# 米家 //home.mi.com
+# 米家
 ^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(?:banner|carousel\/banners|myTab|openingBanner) data-type=text data="{}" status-code=200
 
 [Script]
-# 12306 //ad.12306.cn, mobile.12306.cn
-移除12306广告 = type=http-request, pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/MyBlockads/12306.js, requires-body=true
+# 12306
+移除12306广告 = type=http-request, pattern=^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/12306.js, requires-body=true
 
-移除12306广告 = type=http-response, pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/MyBlockads/header.js
+移除12306广告 = type=http-response, pattern=^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/header.js
 
-# 阿里云盘 //*api.alipan.com, member.alipan.com
-移除阿里云盘广告 = type=http-response, pattern=^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(?:news|widgets), script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/MyBlockads/adrive.js, requires-body=true
+# 阿里云盘
+移除阿里云盘广告 = type=http-response, pattern=^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(?:news|widgets), script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/Adrive.js, requires-body=true
 
-移除阿里云盘广告 = type=http-response, pattern=^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/MyBlockads/adrive.js, requires-body=true
+移除阿里云盘广告 = type=http-response, pattern=^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/Adrive.js, requires-body=true
 
-# 阿里巴巴 //acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
-移除阿里巴巴广告 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(?:cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/MyBlockads/MyBlockads.js, requires-body=true
+# 阿里巴巴
+移除阿里巴巴广告 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(?:cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/BlockAds.js, requires-body=true
 
-移除阿里巴巴广告 = type=http-response, pattern=^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/MyBlockads/MyBlockads.js, requires-body=true
+移除阿里巴巴广告 = type=http-response, pattern=^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/BlockAds.js, requires-body=true
 
-# 草榴社区 //2023.redircdn.com
-移除草榴社区广告 = type=http-response, pattern=^https:\/\/2023\.redircdn\.com\/web\/mob_post\.js\?, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/MyBlockads/MyBlockads.js, requires-body=true
+# 草榴社区
+移除草榴社区广告 = type=http-response, pattern=^https:\/\/2023\.redircdn\.com\/web\/mob_post\.js\?, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/BlockAds.js, requires-body=true
 
 # 大众点评开屏广告
-大众点评 = type=http-response, pattern=^https?:\/\/img\.meituan\.net\/dpmobile\/, script-path=https://raw.githubusercontent.com/zirawell/Ad-Cleaner/main/Collection/js/dianping.js, requires-body=true, timeout=60
+移除大众点评广告 = type=http-response, pattern=^https?:\/\/img\.meituan\.net\/dpmobile\/, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/Dianping.js, requires-body=true, timeout=60
 
-# 酷安 //api.coolapk.com
-移除酷安广告 = type=http-response, pattern=^https:\/\/api\.coolapk\.com\/v6\/(?:feed\/detail|feed\/replyList|page\/dataList|main\/dataList|main\/indexV8|main\/init), script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/MyBlockads/coolapk.js, requires-body=true
+# 酷安
+移除酷安广告 = type=http-response, pattern=^https:\/\/api\.coolapk\.com\/v6\/(?:feed\/detail|feed\/replyList|page\/dataList|main\/dataList|main\/indexV8|main\/init), script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/Coolapk.js, requires-body=true
 
-# 小米商城 //api.m.mi.com, shop-api.retail.mi.com
-移除小米商城广告 = type=http-response, pattern=^https:\/\/api\.m\.mi\.com\/v1\/app\/start, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/MyBlockads/MyBlockads.js, requires-body=true
+# 小米商城
+移除小米商城广告 = type=http-response, pattern=^https:\/\/api\.m\.mi\.com\/v1\/app\/start, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/BlockAds.js, requires-body=true
 
-# 中国移动云盘 //ad.mcloud.139.com, jzts.cmpassport.com
-移除中国移动云盘广告 = type=http-response, pattern=^https:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/MyBlockads/cloud139.js, requires-body=true
+# 中国移动云盘
+移除中国移动云盘广告 = type=http-response, pattern=^https:\/\/ad\.mcloud\.139\.com\/advertapi\/adv-filter\/, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/Cloud139.js, requires-body=true
 
-移除中国移动云盘广告 = type=http-response, pattern=^https:\/\/jzts\.cmpassport\.com\/personalized\/getPushContent, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/MyBlockads/cloud139.js, requires-body=true
+移除中国移动云盘广告 = type=http-response, pattern=^https:\/\/jzts\.cmpassport\.com\/personalized\/getPushContent, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/Cloud139.js, requires-body=true
 
 # 百度防跳转
-百度防跳转 = type=http-request, pattern=^https:\/\/boxer\.baidu\.com\/scheme\?scheme, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/Webpage/BaiduNoRedirect.js
+百度防跳转 = type=http-request, pattern=^https:\/\/boxer\.baidu\.com\/scheme\?scheme, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/BaiduNoRedirect.js
 
 # 百度首页
-百度首页 = type=http-response, pattern=^https:\/\/(?:www|m)\.baidu\.com(\/|\/\?(tn=&)?from=\d+\w)?$, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/Webpage/baidu-index.js, requires-body=true
+移除百度首页广告 = type=http-response, pattern=^https:\/\/(?:www|m)\.baidu\.com(\/|\/\?(tn=&)?from=\d+\w)?$, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/BaiduIndex.js, requires-body=true
 
 # 百度知道
-百度知道 = type=http-response, pattern=^https:\/\/zhidao\.baidu\.com\/(?:question|index|\?fr|\?word), script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/Webpage/baidu-zhidao.js, requires-body=true
+移除百度知道广告 = type=http-response, pattern=^https:\/\/zhidao\.baidu\.com\/(?:question|index|\?fr|\?word), script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/BaiduZhidao.js, requires-body=true
 
 # JavDB
-JavDB = type=http-response, pattern=^https:\/\/javdb\.com\/, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/Webpage/javdb.js, requires-body=true
+移除JavDB广告 = type=http-response, pattern=^https:\/\/javdb\.com\/, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/Javdb.js, requires-body=true
 
 # missav
-missav = type=http-response, pattern=^https:\/\/missav\.(?:ai|ws)\/(?!(build|fonts|img|js|api|cdn-cgi)\/)., script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/Webpage/missav.js, requires-body=true
+移除Missav广告 = type=http-response, pattern=^https:\/\/missav\.(?:ai|ws)\/(?!(build|fonts|img|js|api|cdn-cgi)\/)., script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/Missav.js, requires-body=true
+
+# dsenrp55
+移除Dsenrp55广告 = type=http-request, pattern=^https:\/\/ghfgnm\.com\/mmapi\/m3u8\/p\/.+\.m3u8, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BlockAds/Dsenrp55.js, requires-body=true, timeout=60
 
 [MITM]
-hostname = %APPEND% ad.12306.cn, mobile.12306.cn, list-app-m.i4.cn, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pan.baidu.com, 2023.redircdn.com, www.washpayer.com, api.douban.com, img3.doubanio.com, qnmob3.doubanio.com, img*.douban.com, frodo.douban.com, erebor.douban.com, image.mybank.icbc.com.cn, hfapp-service.qweather.net, acs-m.freshippo.com, gab.122.gov.cn, api.coolapk.com, adserviceretry.kglink.cn, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, api.m.mi.com, home.mi.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, ad.mcloud.139.com, jzts.cmpassport.com, boxer.baidu.com, m.baidu.com, www.baidu.com, zhidao.baidu.com, asserts.avple.tv, javdb.com, *.pornhub.com, 18hlw.com, lneuk.rslsilne.cc, 7054s.rbcmpeu.org, d2bkn61acaxm61.cloudfront.net, missav.ai, missav.ws
+hostname = %APPEND% ad.12306.cn, mobile.12306.cn, list-app-m.i4.cn, *api.alipan.com, member.alipan.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pan.baidu.com, 2023.redircdn.com, www.washpayer.com, api.douban.com, img3.doubanio.com, qnmob3.doubanio.com, img*.douban.com, frodo.douban.com, erebor.douban.com, image.mybank.icbc.com.cn, hfapp-service.qweather.net, acs-m.freshippo.com, gab.122.gov.cn, api.coolapk.com, adserviceretry.kglink.cn, p0.pipi.cn, flowplus.meituan.net, img.meituan.net, s3plus.meituan.net, osg-service.sgcc.com.cn, api.m.mi.com, home.mi.com, shop-api.retail.mi.com, wallet.95516.com, mobilepaas.abchina.com.cn, ad.mcloud.139.com, jzts.cmpassport.com, boxer.baidu.com, m.baidu.com, www.baidu.com, zhidao.baidu.com, asserts.avple.tv, javdb.com, *.pornhub.com, 18hlw.com, lneuk.rslsilne.cc, 7054s.rbcmpeu.org, d2bkn61acaxm61.cloudfront.net, missav.ai, missav.ws, dsenrp55.com, ghfgnm.com
