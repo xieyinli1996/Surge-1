@@ -6,6 +6,9 @@
 #!icon = https://raw.githubusercontent.com/mist-whisper/Icon/master/App_icon/120px/WeChat.png
 #!date = 2025-05-11 15:58:00
 
+#!arguments=Proxy:你的策略组
+#!arguments-desc=Proxy:选择策略组，将微信&WeChat相关域名分流，直连请输入DIRECT，代理请输入你的策略组名。
+
 [Rule]
 # 微信公众号广告过滤
 DOMAIN-SUFFIX,wxs.qq.com,REJECT
