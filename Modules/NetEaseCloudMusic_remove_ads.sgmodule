@@ -7,7 +7,7 @@
 #!date = 2025-05-12 23:23:00
 
 
-#!arguments= 解锁黑胶会员:#,漫游:1,笔记:1,发现:1,问候语:0,排行榜:0,每日推荐:0,推荐歌单:0,最近常听:1,雷达歌单:1,音乐合伙人:1,推荐专属歌单:0,你的专属歌单:0
+#!arguments= 脚本伪vip:#,漫游:1,笔记:1,发现:1,问候语:0,排行榜:0,每日推荐:0,推荐歌单:0,最近常听:1,雷达歌单:1,音乐合伙人:1,推荐专属歌单:0,你的专属歌单:0
 #!arguments-desc=  将 # 改成任意名称即可开启对应脚本\n隐藏为:1/true  不隐藏为:0/false
 
 [Rule]
@@ -18,7 +18,7 @@ DOMAIN,httpdns.n.netease.com,REJECT-NO-DROP
 
 [Header Rewrite]
 # 解锁网易云音乐黑胶会员并解锁播放权限
-http-request ^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/e?api\/(mine\/(collect|rn)\/header\/info|v\d\/user\/detail\/\d+|vipnewcenter\/app\/resource\/newaccountpage|music-vip-membership\/(client|front)\/vip\/info|batch|playlist\/privilege|search\/complex\/page|v\d\/(discovery\/recommend\/songs|playlist\/detail)) header-replace 'x-aeapi' 'false'
+# http-request ^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/e?api\/(mine\/(collect|rn)\/header\/info|v\d\/user\/detail\/\d+|vipnewcenter\/app\/resource\/newaccountpage|music-vip-membership\/(client|front)\/vip\/info|batch|playlist\/privilege|search\/complex\/page|v\d\/(discovery\/recommend\/songs|playlist\/detail)) header-replace 'x-aeapi' 'false'
 
 [URL Rewrite]
 ^https?:\/\/httpdns.n\.netease\.com - reject
@@ -39,9 +39,11 @@ http-request ^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/e?api\/(mine\/(
 ^https:\/\/interface\d\.music\.163\.com\/eapi\/my\/podcast\/tab\/recommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
+# 伪vip
+{{{脚本伪vip}}} = type=http-response,pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(music-vip-membership\/client\/vip\/info|vipnewcenter\/app\/resource\/newaccountpage),requires-body=1,max-size=0,timeout=20,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
 # 会员解锁
-{{{共享会员}}} = type=http-request, pattern=^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(mine\/(collect|rn)\/header\/info|v\d\/user\/detail\/\d+|vipnewcenter\/app\/resource\/newaccountpage|music-vip-membership\/(client|front)\/vip\/info|batch|playlist\/privilege|search\/complex\/page|v\d\/(discovery\/recommend\/songs|playlist\/detail)), script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, requires-body=1, binary-body-mode=1, max-size=-1, timeout=60
-{{{共享会员}}} = type=http-request, pattern=^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(song\/enhance\/player\/url\/v\d|vipauth\/app\/auth\/query), script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, requires-body=1, binary-body-mode=1, max-size=-1, timeout=60
+# {{{共享会员}}} = type=http-response, pattern=^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(mine\/(collect|rn)\/header\/info|v\d\/user\/detail\/\d+|vipnewcenter\/app\/resource\/newaccountpage|music-vip-membership\/(client|front)\/vip\/info|batch|playlist\/privilege|search\/complex\/page|v\d\/(discovery\/recommend\/songs|playlist\/detail)), script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, requires-body=1, binary-body-mode=1, max-size=-1, timeout=60
+# {{{共享会员}}} = type=http-request, pattern=^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(song\/enhance\/player\/url\/v\d|vipauth\/app\/auth\/query), script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, requires-body=1, binary-body-mode=1, max-size=-1, timeout=60
 
 # 以下为非会员部分
 评论区、热推、有话想说、分享一下、歌曲下的祝福等小提示 = type=http-response,pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(batch|v\d\/resource\/comment\/floor\/get),requires-body=1,max-size=0,timeout=20,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
