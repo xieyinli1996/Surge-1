@@ -74,7 +74,7 @@
 * [拼多多去广告](https://raw.githubusercontent.com/mist-whisper/Surge/master/Modules/PinDuoDuo_remove_ads.sgmodule)
 * [朴朴超市去广告](https://raw.githubusercontent.com/mist-whisper/Surge/master/Modules/PuPuMall_remove_ads.sgmodule)
 * [小红书去广告](https://raw.githubusercontent.com/mist-whisper/Surge/master/Modules/REDnote_remove_ads.sgmodule)
-* [Script-Hub](https://raw.githubusercontent.com/mist-whisper/Surge/master/Modules/Script-Hub.sgmodule)
+* [Manager Tools](https://raw.githubusercontent.com/mist-whisper/Surge/master/Modules/Manager-Tools.sgmodule)
 * [Siri增强](https://raw.githubusercontent.com/mist-whisper/Surge/master/Modules/Siri.sgmodule)
 * [Soul去广告](https://raw.githubusercontent.com/mist-whisper/Surge/master/Modules/Soul_remove_ads.sgmodule)
 * [Spotify去广告](https://raw.githubusercontent.com/mist-whisper/Surge/master/Modules/Spotify_remove_ads.sgmodule)
