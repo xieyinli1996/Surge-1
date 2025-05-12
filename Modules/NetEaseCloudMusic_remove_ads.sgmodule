@@ -40,8 +40,8 @@ http-request ^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/e?api\/(mine\/(
 
 [Script]
 # 会员解锁
-{{{共享会员}}} = type=http-response, pattern=^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(mine\/(collect|rn)\/header\/info|v\d\/user\/detail\/\d+|vipnewcenter\/app\/resource\/newaccountpage|music-vip-membership\/(client|front)\/vip\/info|batch|playlist\/privilege|search\/complex\/page|v\d\/(discovery\/recommend\/songs|playlist\/detail)), script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, requires-body=1, binary-body-mode=1, max-size=0, timeout=60
-{{{共享会员}}} = type=http-request, pattern=^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(song\/enhance\/player\/url\/v\d|vipauth\/app\/auth\/query), script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, requires-body=1, binary-body-mode=1, max-size=0, timeout=60
+{{{共享会员}}} = type=http-request, pattern=^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(mine\/(collect|rn)\/header\/info|v\d\/user\/detail\/\d+|vipnewcenter\/app\/resource\/newaccountpage|music-vip-membership\/(client|front)\/vip\/info|batch|playlist\/privilege|search\/complex\/page|v\d\/(discovery\/recommend\/songs|playlist\/detail)), script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, requires-body=1, binary-body-mode=1, max-size=-1, timeout=60
+{{{共享会员}}} = type=http-request, pattern=^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(song\/enhance\/player\/url\/v\d|vipauth\/app\/auth\/query), script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, requires-body=1, binary-body-mode=1, max-size=-1, timeout=60
 
 # 以下为非会员部分
 评论区、热推、有话想说、分享一下、歌曲下的祝福等小提示 = type=http-response,pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(batch|v\d\/resource\/comment\/floor\/get),requires-body=1,max-size=0,timeout=20,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
