@@ -4,10 +4,10 @@
 #!author = Keywos[https://github.com/Keywos], RuCu6[https://github.com/RuCu6], wish[https://github.com/mist-whisper], Yuheng0101[https://raw.githubusercontent.com/Yuheng0101]
 #!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
 #!icon = https://raw.githubusercontent.com/mist-whisper/Icon/master/App_icon/120px/NeteaseCloudMusic.png
-#!date = 2025-05-11 18:44:47
+#!date = 2025-05-12 23:23:00
 
 
-#!arguments= [解锁]黑胶会员:#,[隐藏底栏]漫游:0,[隐藏底栏]笔记:0,[隐藏底栏]发现:0,[隐藏首页]问候语:0,[隐藏首页]排行榜:0,[隐藏首页]每日推荐:0,[隐藏首页]推荐歌单:0,[隐藏首页]最近常听:0,[隐藏首页]雷达歌单:0,[隐藏首页]音乐合伙人:0,[隐藏首页]推荐专属歌单:0,[隐藏首页]你的专属歌单:0
+#!arguments= 解锁黑胶会员:#,底栏漫游:1,底栏笔记:1,底栏发现:1,首页问候语:0,首页排行榜:0,首页每日推荐:0,首页推荐歌单:0,首页最近常听:1,首页雷达歌单:1,首页音乐合伙人:1,首页推荐专属歌单:0,首页你的专属歌单:0
 #!arguments-desc=  将 # 改成任意名称即可开启对应脚本\n隐藏为:1/true  不隐藏为:0/false
 
 [Rule]
@@ -36,13 +36,13 @@ DOMAIN,httpdns.n.netease.com,REJECT-NO-DROP
 
 [Script]
 # 会员解锁
-{{{[解锁]黑胶会员}}} = type=http-response, pattern=^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(mine\/(collect|rn)\/header\/info|v\d\/user\/detail\/\d+|vipnewcenter\/app\/resource\/newaccountpage|music-vip-membership\/(client|front)\/vip\/info|batch|playlist\/privilege|search\/complex\/page|v\d\/(discovery\/recommend\/songs|playlist\/detail)), script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, requires-body=true, binary-body-mode=1, max-size=-1, timeout=60
-{{{[解锁]黑胶会员}}} = type=http-request, pattern=^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(song\/enhance\/player\/url\/v\d|vipauth\/app\/auth\/query), script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, requires-body=true, max-size=-1, timeout=60
+{{{解锁黑胶会员}}} = type=http-response, pattern=^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(mine\/(collect|rn)\/header\/info|v\d\/user\/detail\/\d+|vipnewcenter\/app\/resource\/newaccountpage|music-vip-membership\/(client|front)\/vip\/info|batch|playlist\/privilege|search\/complex\/page|v\d\/(discovery\/recommend\/songs|playlist\/detail)), script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, requires-body=true, binary-body-mode=1, max-size=-1, timeout=60
+{{{解锁黑胶会员}}} = type=http-request, pattern=^https?:\/\/interface\d?\.music\.163\.com\/e?api\/(song\/enhance\/player\/url\/v\d|vipauth\/app\/auth\/query), script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/NeteaseCloudMusic/netease.js, requires-body=true, max-size=-1, timeout=60
 
 # 以下为非会员部分
 评论区、热推、有话想说、分享一下、歌曲下的祝福等小提示 = type=http-response,pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(batch|v\d\/resource\/comment\/floor\/get),requires-body=1,max-size=0,timeout=20,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
-推荐、home、主页 = type=http-response,pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(homepage\/block\/page|link\/page\/rcmd\/(resource\/show|block\/resource\/multi\/refresh)),requires-body=1,max-size=0,timeout=20,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, argument="{"PRGG":"{{{[隐藏首页]问候语}}}","PRRK":"{{{[隐藏首页]排行榜}},"PRDRD":"{{{[隐藏首页]每日推荐}}}","PRSCVPT":"{{{[隐藏首页]推荐歌单}}}","PRST":"{{{[隐藏首页]最近常听}}}","PRRR":"{{{[隐藏首页]雷达歌单}}}","HMPR":"{{{[隐藏首页]音乐合伙人}}}"}","PRMST":"{{{[隐藏首页]推荐专属歌单}}}","PRCN":"{{{[隐藏首页]你的专属歌单}}}"}"
-底部选项卡 = type=http-response,pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/home\/framework\/tab,requires-body=1,max-size=0,timeout=20,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, argument="{"MY":"{{{[隐藏底栏]漫游标签}}}","DT":"{{{[隐藏底栏]笔记标签}}}","FX":"{{{[隐藏底栏]发现标签}}}"}"
+推荐、home、主页 = type=http-response,pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/(homepage\/block\/page|link\/page\/rcmd\/(resource\/show|block\/resource\/multi\/refresh)),requires-body=1,max-size=0,timeout=20,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, argument="{"PRGG":"{{{首页问候语}}}","PRRK":"{{{首页排行榜}},"PRDRD":"{{{首页每日推荐}}}","PRSCVPT":"{{{首页推荐歌单}}}","PRST":"{{{首页最近常听}}}","PRRR":"{{{首页雷达歌单}}}","HMPR":"{{{首页音乐合伙人}}}"}","PRMST":"{{{首页推荐专属歌单}}}","PRCN":"{{{首页你的专属歌单}}}"}"
+底部选项卡 = type=http-response,pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/home\/framework\/tab,requires-body=1,max-size=0,timeout=20,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js, argument="{"MY":"{{{底栏漫游标签}}}","DT":"{{{底栏笔记标签}}}","FX":"{{{底栏发现标签}}}"}"
 发现页 = type=http-response,pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/page\/discovery\/resource\/show,requires-body=1,max-size=0,timeout=20,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
 # 播放音效 = type=http-response,pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/song\/play\/more\/list\/v\d,requires-body=1,max-size=0,timeout=20,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
 我的页面 = type=http-response,pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/link\/position\/show\/resource,requires-body=1,max-size=0,timeout=20,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
