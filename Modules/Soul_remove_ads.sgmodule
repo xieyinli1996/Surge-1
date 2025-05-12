@@ -11,8 +11,8 @@
 #!arguments-desc = PROXY：选择策略组，直连请输入DIRECT\n\n开关屏蔽参数：[1/true, 0/false]\n\n默认启用处键入 # 即可关闭
 
 [Rule]
-IP-CIDR, 8.210.3.170/32, {{{PROXY}}}
-IP-CIDR, 47.75.72.47/32, {{{PROXY}}}
+IP-CIDR, 8.210.3.170/32, {{{PROXY}}}, no-resolve
+IP-CIDR, 47.75.72.47/32, {{{PROXY}}}, no-resolve
 
 [URL Rewrite]
 # 去除聊天界面再遇见
