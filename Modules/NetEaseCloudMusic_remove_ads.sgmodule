@@ -14,14 +14,11 @@ DOMAIN,iadmusicmat.music.126.net,REJECT-NO-DROP
 DOMAIN,iadmat.nosdn.127.net,REJECT-NO-DROP
 DOMAIN,iadmatapk.nosdn.127.net,REJECT-NO-DROP
 DOMAIN,httpdns.n.netease.com,REJECT-NO-DROP
+DOMAIN,httpdns.music.163.com,REJECT-NO-DROP
 
 [Header Rewrite]
 # 解锁网易云音乐黑胶会员并解锁播放权限
 # http-request ^https?:\/\/(?:ipv4|interface\d?)\.music\.163\.com\/e?api\/(mine\/(collect|rn)\/header\/info|v\d\/user\/detail\/\d+|vipnewcenter\/app\/resource\/newaccountpage|music-vip-membership\/(client|front)\/vip\/info|batch|playlist\/privilege|search\/complex\/page|v\d\/(discovery\/recommend\/songs|playlist\/detail)) header-replace 'x-aeapi' 'false'
-
-[URL Rewrite]
-^https?:\/\/httpdns.n\.netease\.com - reject
-^https?:\/\/httpdns\.music\.163\.com - reject
 
 [Map Local]
 # 开屏广告
@@ -62,4 +59,4 @@ DOMAIN,httpdns.n.netease.com,REJECT-NO-DROP
 显示未关注你的人 = type=http-response,pattern=^https?:\/\/(ipv4|interface\d?)\.music\.163\.com\/e?api\/user\/follow\/users\/mixed\/get,requires-body=1,max-size=0,timeout=20,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/script/wy/js/wyres.js
 
 [MITM]
-hostname = %APPEND% interface*.music.163.com
+hostname = %APPEND% interface.music.163.com, interface3.music.163.com, interface9.music.163.com,httpdns.n.netease.com, ipv4.music.163.com
