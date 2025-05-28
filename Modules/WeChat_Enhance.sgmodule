@@ -1,10 +1,8 @@
-#!name = WeChat增强
-#!desc = WeChat及微信广告过滤，解锁微信外部链接。
-#!category = 去广告增强
-#!author = ld2j[https://github.com/LD2J0618],RuCu6[https://github.com/RuCu6],可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md],VirgilClyne,zZPiglet[https://github.com/zZPiglet],wish[https://github.com/mist-whisper],ZenmoFeiShi[https://github.com/ZenmoFeiShi]
-#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
-#!icon = https://raw.githubusercontent.com/mist-whisper/Icon/master/App_icon/120px/WeChat.png
-#!date = 2025-05-11 15:58:00
+#!name=WeChat增强
+#!desc=WeChat及微信广告过滤，解锁微信外部链接。
+#!author=ld2j[https://github.com/LD2J0618],RuCu6[https://github.com/RuCu6],可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md],VirgilClyne,zZPiglet[https://github.com/zZPiglet],wish[https://github.com/mist-whisper],ZenmoFeiShi[https://github.com/ZenmoFeiShi]
+#!category=去广告增强
+#!date=2025-05-11 15:58:00
 
 [Rule]
 # 微信公众号广告过滤
