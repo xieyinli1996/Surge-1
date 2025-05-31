@@ -1,21 +1,18 @@
-#!name = 哔哩哔哩每日等级任务
-#!desc = 每天自动完成哔哩哔哩等级任务。\n首次安装模块需打开BiliBili自动获取Cookie，建议客户端和网页版择一使用。\n保持开启状态时检测到Cookie变更会自动更新，解决Cookie经常过期的问题(Cookie有效时不提示更新)。
-#!openUrl = 
-#!author = ClydeTime[https://github.com/ClydeTime], wish[https://github.com/mist-whisper]
-#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
-#!icon = https://raw.githubusercontent.com/mist-whisper/Icon/master/MyIcon/DailyBonus.png
-#!date = 2025-04-30 11:08:00
-#!category = 功能增强
+#!name=哔哩哔哩每日等级任务
+#!desc=每天自动完成哔哩哔哩等级任务。\n首次安装模块需打开BiliBili自动获取Cookie，客户端和扫码择一使用，默认仅开启扫码模式。\n获取cookie后务必填入注释关闭此开关。
+#!author=ClydeTime[https://github.com/ClydeTime], wish[https://github.com/mist-whisper]
+#!category=功能增强
+#!date=2025-05-31 19:49:00
 
-#!arguments = script_enabled:B站Cookie(APP)
-#!arguments-desc = [参数设置]\nscript_enabled:B站Cookie(APP)脚本启停\n   ├ B站Cookie(APP)：启用（默认值）\n   └ 填入"#"：注释停用
+#!arguments=账号捕获(扫码):通过扫码获取cookie,账号捕获(APP):#
+#!arguments-desc=[参数设置]\n账号捕获(扫码):通过扫码获取cookie 脚本启停\n账号捕获(APP):通过客户端获取cookie 脚本启停\n   ├ 账号捕获(扫码)：启用（默认值）\n   └ 填入"#"：注释停用
 
 [Script]
 B站每日任务 = type=cron,cronexp=0 12 * * *,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,wake-system=1,timeout=15
 
-{{{script_enabled}}} = type=http-request,pattern=^https?:\/\/cm\.bilibili\.com\/cm\/api\/fees\/wise$,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
+{{{账号捕获(扫码)}}} = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\?,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0,timeout=30
 
-B站Cookie(网页) = type=http-request,pattern=^https?:\/\/m\.bilibili\.com/$,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
+{{{账号捕获(APP)}}} = type=http-request,pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\?,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
 
 [MITM]
-hostname = %APPEND% cm.bilibili.com, m.bilibili.com
+hostname = %APPEND% app.bilibili.com
