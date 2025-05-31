@@ -8,11 +8,11 @@
 #!arguments-desc=[参数设置]\n账号捕获(扫码):通过扫码获取cookie 脚本启停\n账号捕获(APP):通过客户端获取cookie 脚本启停\ncronexp:定时任务参数   ├ 账号捕获(扫码)：启用（默认值）\n   └ 填入"#"：注释停用
 
 [Script]
-{{{B站每日任务}}}=type=cron,cronexp="{{{cronexp}}}",script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,wake-system=1,timeout=15
+{{{B站每日任务}}}=type=cron,cronexp="{{{cronexp}}}",script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/DailyBonus/BiliBili.js,wake-system=1,timeout=15
 
-{{{账号捕获(扫码)}}} = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\?,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0,timeout=30
+{{{账号捕获(扫码)}}} = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\?,script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/DailyBonus/BiliBili.js,requires-body=0,timeout=30
 
-{{{账号捕获(APP)}}} = type=http-request,pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\?,script-path=https://raw.githubusercontent.com/ClydeTime/BiliBili/main/js/BiliBiliDailyBonus.js,requires-body=0
+{{{账号捕获(APP)}}} = type=http-request,pattern=^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\?,script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/DailyBonus/BiliBili.js,requires-body=0
 
 [MITM]
 hostname = %APPEND% app.bilibili.com
