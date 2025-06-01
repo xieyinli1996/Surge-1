@@ -1,14 +1,11 @@
-#!name = 哔哩哔哩去广告
-#!desc = 过滤哔哩哔哩广告、移除青少年模式弹窗和交互式弹幕、移除无用功能和链接跟踪参数。此模块仅建议iOS 15以上设备使用，且必须启用MitM-over-HTTP/2功能。
-#!openUrl = 
-#!author = Maasea[https://github.com/Maasea], RuCu6[https://github.com/RuCu6], kokoryh[https://github.com/kokoryh], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md],wish[https://github.com/mist-whisper]
-#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
-#!icon = https://raw.githubusercontent.com/mist-whisper/Icon/master/App_icon/120px/Bilibili.png
-#!date = 2025-05-13 11:29:00
-#!category = 去广告
+#!name=哔哩哔哩去广告
+#!desc=过滤哔哩哔哩广告、移除青少年模式弹窗和交互式弹幕、移除无用功能和链接跟踪参数。此模块仅建议iOS 15以上设备使用，且必须启用MitM-over-HTTP/2功能。
+#!author=Maasea[https://github.com/Maasea], RuCu6[https://github.com/RuCu6], kokoryh[https://github.com/kokoryh], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md],wish[https://github.com/mist-whisper]
+#!category=去广告
+#!date=2025-06-31 13:38:00
 
-#!arguments = 动态最常访问:auto,创作中心:0,过滤置顶评论广告:1,空降助手:bilibili.airborne,空降助手弹幕版:#
-#!arguments-desc = 动态最常访问: [true, false, auto]\n- true: 始终显示\n- false: 始终隐藏\n- auto: 仅当列表中存在直播状态时显示\n\n创作中心: [1, 0]\n- 1: 显示\n- 0: 隐藏\n\n过滤置顶评论广告: [1, 0]\n- 1: 开启\n- 0: 关闭\n\n空降助手: 默认开启，配置为"#"时关闭\n\n空降助手弹幕版: 默认关闭，仅限Ipad开启
+#!arguments=动态最常访问:auto,创作中心:0,过滤置顶评论广告:1,空降助手:bilibili.airborne,空降助手弹幕版:#
+#!arguments-desc=动态最常访问: [true, false, auto]\n- true: 始终显示\n- false: 始终隐藏\n- auto: 仅当列表中存在直播状态时显示\n\n创作中心: [1, 0]\n- 1: 显示\n- 0: 隐藏\n\n过滤置顶评论广告: [1, 0]\n- 1: 开启\n- 0: 关闭\n\n空降助手: 默认开启，配置为"#"时关闭\n\n空降助手弹幕版: 默认关闭，仅限Ipad开启
 
 [Rule]
 DOMAIN,api.biliapi.com,REJECT
