@@ -5,11 +5,11 @@
 #!date=2025-05-31 23:59:50
 
 
-#!arguments=底栏创建按钮:1,接力功能:0
-#!arguments-desc=底栏创建按钮: [1, 0]\n- 1: 开启\n- 0: 关闭\n\n接力功能: [1, 0]\n- 1: 开启\n- 0: 关闭
+#!arguments=隐藏底栏创建按钮:1,接力功能:0
+#!arguments-desc=隐藏底栏创建按钮: [1, 0]\n- 1: 开启\n- 0: 关闭\n\n接力功能: [1, 0]\n- 1: 开启\n- 0: 关闭
 
 [Script]
-Protobuf处理 = type=http-response, pattern=^https:\/\/spclient\.wg\.spotify\.com\/(?:bootstrap|user-customization-service), script-path=https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Script/Spotify.Crack.js, requires-body=true, binary-body-mode=true, argument="{"tab":"{{{底栏创建按钮}}}","useractivity":{{{接力功能}}}}"
+Protobuf处理 = type=http-response, pattern=^https:\/\/spclient\.wg\.spotify\.com\/(?:bootstrap|user-customization-service), script-path=https://raw.githubusercontent.com/001ProMax/Surge/refs/heads/main/Script/Spotify.Crack.js, requires-body=true, binary-body-mode=true, argument="{"tab":"{{{隐藏底栏创建按钮}}}","useractivity":{{{接力功能}}}}"
 
 [MITM]
 hostname = %APPEND% spclient.wg.spotify.com
