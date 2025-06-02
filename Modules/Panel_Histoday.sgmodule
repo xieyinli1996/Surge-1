@@ -5,7 +5,7 @@
 #!date=2022-07-06 20:05:57
 
 [Panel]
-Histoday=script-name=历史上的今天
+历史上的今天=script-name=历史上的今天
 
 [Script]
 历史上的今天=type=generic,script-path=https://raw.githubusercontent.com/deezertidal/Surge_Module/master/files/histoday.js,argument=icon=calendar&color=#bf2f24&count=
