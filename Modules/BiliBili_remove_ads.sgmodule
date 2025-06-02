@@ -1,8 +1,8 @@
 #!name=哔哩哔哩去广告
-#!desc=过滤哔哩哔哩广告、移除青少年模式弹窗和交互式弹幕、移除无用功能和链接跟踪参数。此模块仅建议iOS 15以上设备使用。
+#!desc=过滤哔哩哔哩广告、移除青少年模式弹窗和交互式弹幕、移除无用功能和链接跟踪参数。此模块仅建议iOS 15以上设备使用。\n空降助手是第三方提供的功能，依赖于Android版空降助手的服务器数据运作，可能会存在不准确或者失效的问题，此功能与哔哩哔哩官方无关。
 #!author=Maasea[https://github.com/Maasea], RuCu6[https://github.com/RuCu6], kokoryh[https://github.com/kokoryh], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md],wish[https://github.com/mist-whisper]
 #!category=去广告
-#!date=2025-06-01 13:38:00
+#!date=2025-06-02 12:00:00
 
 #!arguments=动态最常访问:auto,创作中心:0,过滤置顶评论广告:1,空降助手:bilibili.airborne,空降助手iPad版:#
 #!arguments-desc=动态最常访问: [true, false, auto]\n- true: 始终显示\n- false: 始终隐藏\n- auto: 仅当列表中存在直播状态时显示\n\n创作中心: [1, 0]\n- 1: 显示\n- 0: 隐藏\n\n过滤置顶评论广告: [1, 0]\n- 1: 开启\n- 0: 关闭\n\n空降助手: 默认开启，配置为"#"时关闭\n\n空降助手iPad版: 默认关闭，仅限ipad开启
@@ -27,11 +27,13 @@ http-response-jq ^https:\/\/api\.live\.bilibili\.com\/xlive\/(?:app-interface\/v
 
 [Script]
 {{{空降助手}}} = type=http-request,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BiliBili/BiliBili_airborne_kokoryh.js
-{{{空降助手iPad版}}} = type=http-request,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BiliBili/BiliBili_airborne_kokoryh.js
+{{{空降助手iPad版}}} = type=http-request,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile$,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.airborne.js
 
 bilibili.skin = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\?,requires-body=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bili-suit-diy.js
+
 bilibili.json = type=http-response,pattern=^https:\/\/app\.bilibili\.com\/x\/(?:resource\/show\/tab\/v2|v2\/(?:splash\/(?:list|show|event\/list2)|feed\/index(?:\/story)?|account\/(?:mine(?:\/ipad)?|myinfo)))\?,argument="{"showUperCenter":{{{创作中心}}}}",requires-body=1,max-size=-1,engine=webview,script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/BiliBili/BiliBili.json.js
-Proto处理 = type=http-response, pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:interface\.v1\.(?:Teenagers\/ModeStatus|Search\/DefaultWords)|show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|TFInfo|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js, requires-body=true, binary-body-mode=true, argument="{"showUpList":"{{{动态最常访问}}}","filterTopReplies":{{{过滤置顶评论广告}}}}"
+
+Proto处理 = type=http-response,pattern=^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.(?:app\.(?:show\.v1\.Popular\/Index|dynamic\.v2\.Dynamic\/DynAll|view(?:unite)?\.v1\.View\/(?:View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite)|polymer\.app\.search\.v1\.Search\/SearchAll|community\.service\.dm\.v1\.DM\/DmView|main\.community\.reply\.v1\.Reply\/MainList|pgc\.gateway\.player\.v2\.PlayURL\/PlayView)$, script-path=https://raw.githubusercontent.com/kokoryh/Sparkle/master/dist/bilibili.protobuf.js,requires-body=1,binary-body-mode=1,max-size=-1,engine=webview,argument="{"showUpList":"{{{动态最常访问}}}","filterTopReplies":{{{过滤置顶评论广告}}},"airborneDm":"{{{空降助手弹幕版}}}"}"
 
 [MITM]
 hostname = %APPEND% grpc.biliapi.net, app.bilibili.com, api.bilibili.com, api.live.bilibili.com
