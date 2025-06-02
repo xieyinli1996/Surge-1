@@ -1,11 +1,11 @@
 #!name=历史上的今天
-#!desc=历史上的今天面板。
+#!desc=显示历史上当天所发生的大事件。
 #!author=deezertidal[https://github.com/deezertidal]
 #!category=面板模块
-#!date=2022-07-06 20:05:57
+#!date=2025-06-02 22:20:00
 
 [Panel]
 历史上的今天=script-name=历史上的今天
 
 [Script]
-历史上的今天=type=generic,script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/Tools/Histoday.js,argument=icon=calendar&color=#bf2f24&count=
+历史上的今天=type=generic,script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/Tools/Histoday.js
