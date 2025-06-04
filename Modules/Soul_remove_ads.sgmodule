@@ -1,5 +1,5 @@
 #!name=Soul去广告
-#!desc=移除开屏广告、移除话题页面热Soul话题、移除评论区礼物榜、移除更新提示、移除青少年弹窗、移除我的页面推广、移除悬浮部件。
+#!desc=移除广告和精简页面。
 #!author=ZenmoFeiShi[https://github.com/ZenmoFeiShi], RuCu6[https://github.com/RuCu6], 可莉🅥[https://github.com/luestr/ProxyResource/blob/main/README.md], kelv1n1n[https://github.com/kelv1n1n], wish[https://raw.githubusercontent.com/mist-whisper]
 #!category=去广告
 #!date=2025-05-04 22:56:00
@@ -8,8 +8,8 @@
 #!arguments-desc = PROXY：选择策略组，直连请输入DIRECT\n\n开关屏蔽参数：[1/true, 0/false]\n\n默认启用处键入 # 即可关闭
 
 [Rule]
-IP-CIDR, 8.210.3.170/32, {{{PROXY}}}, no-resolve
-IP-CIDR, 47.75.72.47/32, {{{PROXY}}}, no-resolve
+IP-CIDR, 8.210.3.170/32, DIRECT, no-resolve
+IP-CIDR, 47.75.72.47/32, DIRECT, no-resolve
 
 [URL Rewrite]
 # 去除聊天界面再遇见
