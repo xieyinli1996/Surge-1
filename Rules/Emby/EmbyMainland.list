@@ -1,8 +1,9 @@
 # NAME: EmbyMainland
 # AUTHOR: Edward
 # HOMEPAGE: https://github.com/mist-whisper/Loon/blob/master/Rules/Emby/EmbyMainland.list
-# UPDATED: 2025-04-20
+# UPDATED: 2025-06-07
 
+DOMAIN,yhemby.top
 DOMAIN,7777777.buzz
 DOMAIN,581658.best
 DOMAIN,0570.123456.buzz
