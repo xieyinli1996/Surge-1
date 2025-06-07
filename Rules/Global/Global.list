@@ -1,11 +1,15 @@
 # NAME: Global
 # AUTHOR: Sukka Edward
 # HOMEPAGE: https://ruleset.skk.moe/List/non_ip/global.conf
-# UPDATED: 2025-05-14
+# UPDATED: 2025-06-07
 # This file contains rules for services that are not available inside the Mainland China.
 
 #DOMAIN,this_ruleset_is_made_by_sukkaw.ruleset.skk.moe
 
+DOMAIN,69yun69.com
+DOMAIN,dash.lyrebird.cloud
+DOMAIN,icons.ly
+DOMAIN,rss.shawnxli.com
 DOMAIN,ping0.cc
 DOMAIN,ipv6.ping0.cc
 DOMAIN,openpanel.follow.is
