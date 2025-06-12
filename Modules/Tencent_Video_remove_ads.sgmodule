@@ -1,35 +1,36 @@
-#!name = 腾讯视频去广告
-#!desc = 过滤腾讯视频客户端广告，如遇失效，则需要重新安装腾讯视频客户端。由于此插件不再维护，客户端版本高于8.9.40可能会导致此插件失效，请勿升级客户端。
-#!openUrl = 
-#!author = RuCu6[https://github.com/RuCu6]
-#!homepage = https://github.com/mist-whisper/Surge/blob/master/README.md
-#!icon = https://raw.githubusercontent.com/mist-whisper/Icon/master/App_icon/120px/Tencent_Video.png
-#!date = 2024-11-28 00:00:00
-#!category = 去广告
+#!name=腾讯视频去广告
+#!desc=过滤腾讯视频客户端开屏广告和片头广告。
+#!author=fmz200[https://github.com/fmz200]
+#!category=去广告
+#!date=2025-05-28 11:25:00
 
 [Rule]
-DOMAIN,adsmind.gdtimg.com,REJECT,extended-matching,pre-matching
-DOMAIN,info4.video.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,info6.video.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,ios.video.mpush.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,otheve.beacon.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,pgdt.gtimg.cn,REJECT,extended-matching,pre-matching
-DOMAIN,tpns.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN,vv6.video.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN-SUFFIX,gdt.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN-SUFFIX,l.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN-KEYWORD,trace.qq.com,REJECT,extended-matching,pre-matching
-DOMAIN-KEYWORD,trace.video.qq.com,REJECT,extended-matching,pre-matching
-IP-CIDR,47.110.187.87/32,REJECT,no-resolve,pre-matching
-URL-REGEX,"^http:\/\/[\d\.:]*\/?(defaultts\.tc|vmind\.qqvideo\.tc|finderpdd\.video)\.qq\.com\/\w+",REJECT,extended-matching
-URL-REGEX,"^http:\/\/apd-vlive\.apdcdn\.tc\.qq\.com\/vmind\.qqvideo\.tc\.qq\.com\/\w+",REJECT,extended-matching
-URL-REGEX,"^http:\/\/apd-\w+\.v\.smtcdns\.com\/(defaultts|omts|vmind\.qqvideo)\.tc\.qq\.com\/\w+",REJECT,extended-matching
-
-[Map Local]
-^https?:\/\/vv\.video\.qq\.com\/(diff|get)vmind data-type=text data="{}" status-code=200
-
-[Script]
-移除广告 = type=http-request, pattern=^https?:\/\/vv\.video\.qq\.com\/getvinfo, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/CommonScript/replace-body.js, requires-body=true, argument="&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
-[MITM]
-hostname = %APPEND% vv.video.qq.com
+DOMAIN,pgdt.gtimg.cn,REJECT
+DOMAIN,ugchsy.gtimg.com,REJECT
+DOMAIN,adsmind.gdtimg.com,REJECT
+DOMAIN,btrace.video.qq.com,REJECT
+DOMAIN,info4.video.qq.com,REJECT
+DOMAIN,info6.video.qq.com,REJECT
+DOMAIN,activity.video.qq.com,REJECT
+DOMAIN,ios.video.mpush.qq.com,REJECT
+DOMAIN,p.l.qq.com,REJECT
+DOMAIN,rpt.gdt.qq.com,REJECT
+DOMAIN,tux.qq.com,REJECT
+DOMAIN,iacc.qq.com,REJECT
+DOMAIN,p2.l.qq.com,REJECT
+DOMAIN,v3.gdt.qq.com,REJECT
+DOMAIN,rmonitor.qq.com,REJECT
+DOMAIN,xs.gdt.qq.com,REJECT
+DOMAIN,aegis.qq.com,REJECT
+DOMAIN,rdelivery.qq.com,REJECT
+DOMAIN,wallpaper-1258344696.file.myqcloud.com,REJECT
+DOMAIN,wallpaper-test-1258344696.file.myqcloud.com,REJECT
+DOMAIN-SUFFIX,api.poll.video.qq.com,REJECT
+DOMAIN-SUFFIX,trace.qq.com,REJECT
+DOMAIN-SUFFIX,tetrack.qq.com,REJECT
+DOMAIN-SUFFIX,tpns.tencent.com,REJECT
+DOMAIN-SUFFIX,stat.tpns.tencent.com,REJECT
+DOMAIN-SUFFIX,static-res.qq.com,REJECT
+DOMAIN-SUFFIX,omgmta.qq.com,REJECT
+DOMAIN-SUFFIX,omgmta1.qq.com,REJECT
+IP-CIDR,183.201.213.194/24,REJECT,no-resolve
