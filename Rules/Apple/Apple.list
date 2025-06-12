@@ -2,16 +2,15 @@
 # NAME: Apple
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-12-06 02:11:10
-# DOMAIN: 268
+# UPDATED: 2025-05-21 17:26:00
+# DOMAIN: 266
 # DOMAIN-KEYWORD: 7
 # DOMAIN-SUFFIX: 1549
 # DOMAIN-WILDCARD: 15
 # IP-CIDR: 10
 # USER-AGENT: 23
-# TOTAL: 1872
-DOMAIN,apps.apple.com
-DOMAIN,itunes.apple.com
+# TOTAL: 1870
+
 DOMAIN,a1.mzstatic.com
 DOMAIN,a2.mzstatic.com
 DOMAIN,a3.mzstatic.com
@@ -278,6 +277,7 @@ DOMAIN,guzzoni.apple.com
 DOMAIN,beta.apple.com
 DOMAIN,testflight.apple.com
 DOMAIN,www-cdn.icloud.com.akadns.net
+
 DOMAIN-SUFFIX,100beatscheap.com
 DOMAIN-SUFFIX,1monsterbeatsbydreus.com
 DOMAIN-SUFFIX,1to1computing.com.au
@@ -361,7 +361,7 @@ DOMAIN-SUFFIX,apple.co.mz
 DOMAIN-SUFFIX,apple.co.nz
 DOMAIN-SUFFIX,apple.co.th
 DOMAIN-SUFFIX,apple.co.uk
-DOMAIN-SUFFIX,apple.com
+# DOMAIN-SUFFIX,apple.com
 DOMAIN-SUFFIX,apple.com.af
 DOMAIN-SUFFIX,apple.com.au
 DOMAIN-SUFFIX,apple.com.bo
