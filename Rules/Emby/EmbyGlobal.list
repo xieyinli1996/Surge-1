@@ -1,73 +1,15 @@
 # NAME: EmbyGlobal
-# AUTHOR: justdoiting Edward
-# HOMEPAGE: https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Surge/Emby/Emby.list
-# HOMEPAGE: https://github.com/mist-whisper/Loon/blob/master/Rules/Emby/EmbyGlobal.list
-# UPDATED: 2025-01-12
-# DOMAIN: 7
-# DOMAIN-KEYWORD: 4
-# DOMAIN-SUFFIX: 44
-# PROCESS-NAME: 1
-# TOTAL: 56
+# AUTHOR: wish
+# UPDATED: 2025-06-13
 
-DOMAIN,yhemby.top
 DOMAIN,pub1.emby.wtf
 DOMAIN,pub1.term.wtf
 DOMAIN,pub2.emby.wtf
 DOMAIN,pub2.term.wtf
 DOMAIN,pub3.emby.wtf
 DOMAIN,pub3.term.wtf
-DOMAIN,emby.enjoyit.eu.org
-DOMAIN,emby.lcloud.wiki
-DOMAIN,notnetflix.cos.cat
 
-DOMAIN-SUFFIX,misakaf.org
-DOMAIN-SUFFIX,agahk1.jmsooo.com
-DOMAIN-SUFFIX,agajp1.jmsooo.com
-DOMAIN-SUFFIX,agasg1.jmsooo.com
-DOMAIN-SUFFIX,aws.jmsooo.com
-DOMAIN-SUFFIX,cf1.jmsooo.com
-DOMAIN-SUFFIX,cristiamo.xyz
-DOMAIN-SUFFIX,emby.cjpc.cc
-DOMAIN-SUFFIX,emby.cjpc.tv
-DOMAIN-SUFFIX,emby.cjpc.xyz
-DOMAIN-SUFFIX,emby.cristiamo.top
-DOMAIN-SUFFIX,emby.flowercloud.yt
-DOMAIN-SUFFIX,emby.immtel.com
-DOMAIN-SUFFIX,emby.maying.club
-DOMAIN-SUFFIX,emby.mcwy.me
-DOMAIN-SUFFIX,emby.mdss.cloud
-DOMAIN-SUFFIX,emby.neko.edu.rs
-DOMAIN-SUFFIX,emby.nexitally.com
-DOMAIN-SUFFIX,emby.nyancat.net
-DOMAIN-SUFFIX,emby.ok.edu.hk
-DOMAIN-SUFFIX,emby.paoche.ooo
-DOMAIN-SUFFIX,emby.prprcloud.com
 DOMAIN-SUFFIX,emby.wtf
-DOMAIN-SUFFIX,emby.xeton.dev
-DOMAIN-SUFFIX,emby.ytoo.li
-DOMAIN-SUFFIX,embymv.tk
-DOMAIN-SUFFIX,embyplus.org
-DOMAIN-SUFFIX,embyserver.ga
-DOMAIN-SUFFIX,hinet.jmsooo.com
-DOMAIN-SUFFIX,imetyou.top
-DOMAIN-SUFFIX,jellyfin.asia
-DOMAIN-SUFFIX,jellyfin.xeton.dev
-DOMAIN-SUFFIX,line.emby.men
-DOMAIN-SUFFIX,mickeycloud.com
-DOMAIN-SUFFIX,movie.xeton.dev
-DOMAIN-SUFFIX,ntt1.jmsooo.com
-DOMAIN-SUFFIX,ohhhh.org
-DOMAIN-SUFFIX,peachmv.me
-DOMAIN-SUFFIX,pilipiliultra.com
-DOMAIN-SUFFIX,plusmedia.site
-DOMAIN-SUFFIX,poloemby.xyz
-DOMAIN-SUFFIX,pornemby.club
-DOMAIN-SUFFIX,servers.xeton.dev
-DOMAIN-SUFFIX,xmsl.org
 
 DOMAIN-KEYWORD,wtf
 DOMAIN-KEYWORD,emby.wtf
-DOMAIN-KEYWORD,jmsooo
-DOMAIN-KEYWORD,odysseyplus
-
-PROCESS-NAME,com.mb.android
