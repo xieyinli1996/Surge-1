@@ -1,7 +1,7 @@
 # NAME: Global
 # AUTHOR: Sukka Edward
 # HOMEPAGE: https://ruleset.skk.moe/List/non_ip/global.conf
-# UPDATED: 2025-06-07
+# UPDATED: 2025-06-13
 # This file contains rules for services that are not available inside the Mainland China.
 
 #DOMAIN,this_ruleset_is_made_by_sukkaw.ruleset.skk.moe
@@ -25,6 +25,9 @@ DOMAIN,ccmdl.adobe.com
 DOMAIN,media.steampowered.com
 DOMAIN,wego.here.com
 
+DOMAIN-SUFFIX,theinitium.com
+DOMAIN-SUFFIX,tailwindcss.com
+DOMAIN-SUFFIX,cloudflareinsights.com
 DOMAIN-SUFFIX,netlib.re
 DOMAIN-SUFFIX,tktn.be
 DOMAIN-SUFFIX,abc.xyz
@@ -554,6 +557,7 @@ DOMAIN-SUFFIX,quillbot.com
 DOMAIN-SUFFIX,zh.1lib.sk
 DOMAIN-SUFFIX,quppy.com
 DOMAIN-SUFFIX,trakt.tv
+
 DOMAIN-KEYWORD,blogspot
 DOMAIN-KEYWORD,facebook
 DOMAIN-KEYWORD,whatsapp
@@ -574,4 +578,5 @@ DOMAIN-KEYWORD,levelinfinite
 DOMAIN-KEYWORD,tmdb
 DOMAIN-KEYWORD,depay
 DOMAIN-KEYWORD,dupay
+DOMAIN-KEYWORD,theinitium
 USER-AGENT,Roam*
