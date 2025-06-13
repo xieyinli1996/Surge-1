@@ -1,11 +1,11 @@
 #!name=端传媒会员
 #!desc=解锁端传媒会员
-#!author=wish[https://github.com/mist-whisper], Yuheng0101[https://github.com/Yuheng0101]
+#!author=wish[https://github.com/mist-whisper]
 #!category=会员解锁
 #!date=2025-06-13 22:41:00
 
 [Script]
-端传媒会员 = type=http-response, pattern=^https?:\/\/app\.theinitium\.com\/subs\/initiummedia_subs\/verify_subscription, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/InitiumMedia/InitiumMedia.js, requires-body=true, timeout=60
+端传媒会员=type=http-response, pattern=^https?:\/\/app\.theinitium\.com\/subs\/initiummedia_subs\/verify_subscription, script-path=https://raw.githubusercontent.com/mist-whisper/Script/master/InitiumMedia/InitiumMedia.js, requires-body=true, timeout=60
 
 [MITM]
 hostname = %APPEND% app.theinitium.com
