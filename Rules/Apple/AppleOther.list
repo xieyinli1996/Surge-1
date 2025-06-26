@@ -1,5 +1,4 @@
-# NAME: Apple Other
+# NAME: Apple Global
+# UPDATED: 2025-06-26
 
-DOMAIN, buy.itunes.apple.com // Apple books
-DOMAIN, feeds.acast.com // Apple podcast
-DOMAIN, apple-relay.apple.com // Apple AI
+DOMAIN,buy.itunes.apple.com
