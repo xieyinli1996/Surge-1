@@ -1,12 +1,5 @@
-# 本项目内容由 https://github.com/luestr 基于原项目修改而来，在此表示感谢。
 # NAME: Games
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:14:50
-# DOMAIN: 8
-# DOMAIN-KEYWORD: 3
-# DOMAIN-SUFFIX: 36
-# TOTAL: 47
+# UPDATED: 2025-06-27
 
 DOMAIN,steambroadcast.akamaized.net
 DOMAIN,steamcdn-a.akamaihd.net
@@ -55,3 +48,4 @@ DOMAIN-SUFFIX,wmsjsteam.com
 DOMAIN-KEYWORD,steambroadcast
 DOMAIN-KEYWORD,steamstore
 DOMAIN-KEYWORD,steamuserimages
+DOMAIN-KEYWORD,epic
