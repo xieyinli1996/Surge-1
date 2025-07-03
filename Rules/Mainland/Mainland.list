@@ -1,10 +1,11 @@
 # NAME: Mainland
 # AUTHOR: Sukka wish
 # HOMEPAGE: https://ruleset.skk.moe/List/non_ip/domestic.conf
-# UPDATED: 2025-06-03 00:10:00
+# UPDATED: 2025-07-03
 #This file contains known addresses that are avaliable in the Mainland China.
 # This ruleset is made by Sukka and wish
 
+DOMAIN,googleads.link
 DOMAIN,linux.do
 DOMAIN,download.sgameglobal.com
 DOMAIN,api.revenuecat.com
